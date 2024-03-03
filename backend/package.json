@@ -1,6 +1,7 @@
 {
   "name": "ps-backend",
   "version": "1.0.0",
+  "type": "module",
   "description": "MERN Project for Pet Shop",
   "main": "index.js",
   "scripts": {
