@@ -1,5 +1,5 @@
 const register = (req, res) => {
-  res.send("FROM API VETS register DUDE!!!!");
+  res.json({url:"FROM API VETS DUDE!!!!"});
 };
 
 const profile = (req, res) => {
