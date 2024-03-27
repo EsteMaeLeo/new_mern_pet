@@ -4,7 +4,7 @@ import { register, profile } from "../controllers/vetController.js";
 
 const router = express.Router();
 
-router.get("/", register);
+router.post("/", register);
 
 router.get("/profile", profile);
 export default router;

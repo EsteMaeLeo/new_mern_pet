@@ -1,9 +1,9 @@
 const register = (req, res) => {
-  res.json({url:"FROM API VETS DUDE!!!!"});
+  res.json({msg:"Creating the user"});
 };
 
 const profile = (req, res) => {
-  res.send("FROM API API/VET/profile");
+    res.json({msg:"USER info"});
 };
 
 export { register, profile };
