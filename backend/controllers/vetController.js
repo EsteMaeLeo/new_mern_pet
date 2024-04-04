@@ -1,4 +1,5 @@
 const register = (req, res) => {
+  console.log(req.body)
   res.json({msg:"Creating the user"});
 };
 
