@@ -1,6 +1,6 @@
 const register = (req, res) => {
   console.log(req.body)
-  const (email, password) = req.body;
+  const {email, password} = req.body;
   res.json({msg:"Creating the user"});
 };
 
