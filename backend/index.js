@@ -8,7 +8,7 @@ const app = express();
 dotenv.config();
 
 connectDB();
-
+app.use(express.json())
 app.use("/api/veterinarian", vetRoutes);
 
 const PORT = process.env.PORT || 4005;
