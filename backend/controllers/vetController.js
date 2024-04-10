@@ -19,6 +19,7 @@ const register = async (req, res) => {
     //save new veterinarian
     const vet = new veterinarian(req.body);
     const vetSave = await vet.save();
+    console.log(vetSave)
     res.json(vetSave);
   } catch (error) {
     console.log(error);
