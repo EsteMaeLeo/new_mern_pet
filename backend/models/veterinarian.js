@@ -27,6 +27,7 @@ const veterinarianShema = mongoose.Schema({
   },
   token: {
     type: String,
+    default:Date.now(),
   },
   confirm: {
     type: String,
