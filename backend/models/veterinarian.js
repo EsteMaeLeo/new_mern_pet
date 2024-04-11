@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import generateid from "../helpers/generateid.js";
 
 const veterinarianShema = mongoose.Schema({
   name: {
@@ -27,7 +28,7 @@ const veterinarianShema = mongoose.Schema({
   },
   token: {
     type: String,
-    default:Date.now(),
+    default: generateid,
   },
   confirm: {
     type: String,
