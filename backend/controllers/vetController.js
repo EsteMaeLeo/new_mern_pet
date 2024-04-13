@@ -30,4 +30,7 @@ const profile = (req, res) => {
   res.json({ msg: "USER info" });
 };
 
-export { register, profile };
+const confirm =(req, res)=>{
+  res.json({ msg: "confirm" })
+}
+export { register, profile, confirm };
