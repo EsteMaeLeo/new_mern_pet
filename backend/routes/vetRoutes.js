@@ -7,5 +7,5 @@ const router = express.Router();
 router.post("/", register);
 
 router.get("/profile", profile);
-router.get("/confirm", confirm);
+router.get("/confirm/:token", confirm);
 export default router;

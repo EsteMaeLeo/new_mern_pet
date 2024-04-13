@@ -19,7 +19,7 @@ const register = async (req, res) => {
     //save new veterinarian
     const vet = new veterinarian(req.body);
     const vetSave = await vet.save();
-    console.log(vetSave)
+    console.log(vetSave);
     res.json(vetSave);
   } catch (error) {
     console.log(error);
@@ -30,7 +30,26 @@ const profile = (req, res) => {
   res.json({ msg: "USER info" });
 };
 
-const confirm =(req, res)=>{
-  res.json({ msg: "confirm" })
-}
+const confirm = async (req, res) => {
+  const { token } = req.params;
+
+  const confirmUser = await veterinarian.findOne({ token });
+
+  if (!confirmUser) {
+    const error = new Error("Invalid Token");
+    return res.status(404).json({ msg: error.message });
+  }
+
+  console.log(confirmUser);
+
+  try {
+    //save new veterinarian
+    confirmUser.token = null;
+    confirmUser.confirm = true;
+    await confirmUser.save();
+    res.json({ msg: "User confirm correctly" });
+  } catch (error) {
+    console.log(error);
+  }
+};
 export { register, profile, confirm };
