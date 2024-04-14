@@ -37,9 +37,13 @@ const veterinarianShema = mongoose.Schema({
   },
 });
 
-veterinarianShema.pre('save', function(){
-  console.log('before save')
-})
+veterinarianShema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    next();
+  }
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
 
 const veterinarian = mongoose.model("veterinarian", veterinarianShema);
 
