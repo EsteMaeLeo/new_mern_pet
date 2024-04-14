@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 import generateid from "../helpers/generateid.js";
 
 const veterinarianShema = mongoose.Schema({
@@ -35,6 +36,10 @@ const veterinarianShema = mongoose.Schema({
     default: false,
   },
 });
+
+veterinarianShema.pre('save', function(){
+  console.log('before save')
+})
 
 const veterinarian = mongoose.model("veterinarian", veterinarianShema);
 
