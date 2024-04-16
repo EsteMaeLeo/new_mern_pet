@@ -53,7 +53,7 @@ const confirm = async (req, res) => {
   }
 };
 
-const login = (req, reg) => {
+const login = (req, res) => {
   res.json({ msg: "login" });
 };
 export { register, profile, confirm, login };
