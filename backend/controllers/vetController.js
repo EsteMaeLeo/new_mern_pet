@@ -52,4 +52,8 @@ const confirm = async (req, res) => {
     console.log(error);
   }
 };
-export { register, profile, confirm };
+
+const login = (req, reg) => {
+  res.json({ msg: "login" });
+};
+export { register, profile, confirm, login };
