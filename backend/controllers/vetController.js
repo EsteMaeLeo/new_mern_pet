@@ -57,6 +57,9 @@ const login = async(req, res) => {
   console.log(req.body);
   const{email}=req.body;
   const user = await veterinarian.findOne({email});
+  if(user){
+    console.log("User logged....")
+  }
   res.json({ msg: "login" });
 };
 export { register, profile, confirm, login };
