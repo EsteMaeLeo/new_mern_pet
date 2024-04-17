@@ -53,7 +53,10 @@ const confirm = async (req, res) => {
   }
 };
 
-const login = (req, res) => {
+const login = async(req, res) => {
+  console.log(req.body);
+  const{email}=req.body;
+  const user = await veterinarian.findOne({email});
   res.json({ msg: "login" });
 };
 export { register, profile, confirm, login };
