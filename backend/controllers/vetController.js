@@ -59,6 +59,8 @@ const login = async(req, res) => {
   const user = await veterinarian.findOne({email});
   if(user){
     console.log("User logged....")
+  }else{
+    res.status(403).json({msg:'User doesnt exist.....'})
   }
   res.json({ msg: "login" });
 };
