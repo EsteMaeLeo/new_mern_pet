@@ -53,15 +53,17 @@ const confirm = async (req, res) => {
   }
 };
 
-const login = async(req, res) => {
+const login = async (req, res) => {
   console.log(req.body);
-  const{email}=req.body;
-  const user = await veterinarian.findOne({email});
-  if(user){
-    console.log("User logged....")
-  }else{
-    res.status(403).json({msg:'User doesnt exist.....'})
+
+  const { email } = req.body;
+
+  const user = await veterinarian.findOne({ email });
+  if (!user) {
+    const error = new Error("User doesnt exist.....");
+    return res.status(403).json({ msg: error.message });
   }
+  console.log("User logged....");
   res.json({ msg: "login" });
 };
 export { register, profile, confirm, login };
