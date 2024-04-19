@@ -63,7 +63,11 @@ const login = async (req, res) => {
     const error = new Error("User doesnt exist.....");
     return res.status(403).json({ msg: error.message });
   }
-  console.log("User logged....");
-  res.json({ msg: "login" });
+  console.log(user)
+  if(user.confirm === "false"){console.log(user.confirm)
+    const error = new Error("User is not confirm.....");
+    return res.status(403).json({ msg: error.message }); 
+  }
+
 };
 export { register, profile, confirm, login };
