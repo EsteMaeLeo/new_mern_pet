@@ -71,6 +71,9 @@ const login = async (req, res) => {
 
   if(await user.checkPassword(password)){
     console.log("password correct")
+  }else{
+    const error = new Error("WRONG Password.....");
+    return res.status(403).json({ msg: error.message }); 
   }
 
 };
