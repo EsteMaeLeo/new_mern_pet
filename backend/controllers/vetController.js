@@ -56,7 +56,7 @@ const confirm = async (req, res) => {
 const login = async (req, res) => {
   console.log(req.body);
 
-  const { email } = req.body;
+  const { email, password } = req.body;
 
   const user = await veterinarian.findOne({ email });
   if (!user) {
@@ -67,6 +67,10 @@ const login = async (req, res) => {
   if(user.confirm === "false"){console.log(user.confirm)
     const error = new Error("User is not confirm.....");
     return res.status(403).json({ msg: error.message }); 
+  }
+
+  if(await user.checkPassword(password)){
+    console.log("password correct")
   }
 
 };

@@ -45,6 +45,10 @@ veterinarianShema.pre("save", async function (next) {
   this.password = await bcrypt.hash(this.password, salt);
 });
 
+veterinarianShema.methods.checkPassword = async function (passwordForm) {
+  return await bcrypt.compare(passwordForm, this.password);
+};
+
 const veterinarian = mongoose.model("veterinarian", veterinarianShema);
 
 export default veterinarian;
