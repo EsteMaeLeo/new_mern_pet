@@ -64,18 +64,19 @@ const login = async (req, res) => {
     const error = new Error("User doesnt exist.....");
     return res.status(403).json({ msg: error.message });
   }
-  console.log(user)
-  if(user.confirm === "false"){console.log(user.confirm)
+  console.log(user);
+  if (user.confirm === "false") {
+    console.log(user.confirm);
     const error = new Error("User is not confirm.....");
-    return res.status(403).json({ msg: error.message }); 
+    return res.status(403).json({ msg: error.message });
   }
 
-  if(await user.checkPassword(password)){
-    console.log("password correct")
-  }else{
+  if (await user.checkPassword(password)) {
+    console.log("password correct");
+    res.json({ token: generateJWT(user.id) });
+  } else {
     const error = new Error("WRONG Password.....");
-    return res.status(403).json({ msg: error.message }); 
+    return res.status(403).json({ msg: error.message });
   }
-
 };
 export { register, profile, confirm, login };
