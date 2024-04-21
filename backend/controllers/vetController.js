@@ -1,4 +1,5 @@
 import veterinarian from "../models/veterinarian.js";
+import generateJWT from "../helpers/generateJWT.js";
 
 const register = async (req, res) => {
   console.log(req.body);
