@@ -10,8 +10,8 @@ import {
 const router = express.Router();
 
 router.post("/", register);
-
-router.get("/profile", profile);
 router.get("/confirm/:token", confirm);
 router.post("/login", login);
+
+router.get("/profile", profile);
 export default router;
