@@ -1,11 +1,11 @@
 const checkAuth = (req, res, next) => {
   console.log("from middleware");
   console.log(req.headers);
-  console.log(req.header.authorization);
+  console.log(req.headers.authorization);
 
   if (
-    req.header.authorization &&
-    req.header.authorization.startsWith("Bearer")
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
   ) {
     console.log("Has Token Valid  with Bearer");
   } else {
