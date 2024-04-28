@@ -82,4 +82,17 @@ const login = async (req, res) => {
     return res.status(403).json({ msg: error.message });
   }
 };
-export { register, profile, confirm, login };
+
+const forgotPassword = (req, res) =>{
+
+}
+
+const checkToken = (req, res) =>{
+
+}
+
+const newPassword = (req, res) =>{
+
+}
+
+export { register, profile, confirm, login, forgotPassword, checkToken, newPassword };
