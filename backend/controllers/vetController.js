@@ -28,6 +28,9 @@ const register = async (req, res) => {
 };
 
 const profile = (req, res) => {
+ 
+  const { veterinario } = req;
+  console.log(veterinario)
   res.json({ msg: "USER info" });
 };
 
