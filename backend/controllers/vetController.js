@@ -31,7 +31,7 @@ const profile = (req, res) => {
  
   const { veterinario } = req;
   console.log(veterinario)
-  res.json({ msg: "USER info" });
+  res.json({ profile: veterinario });
 };
 
 const confirm = async (req, res) => {
