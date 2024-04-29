@@ -28,9 +28,8 @@ const register = async (req, res) => {
 };
 
 const profile = (req, res) => {
- 
   const { veterinario } = req;
-  console.log(veterinario)
+  console.log(veterinario);
   res.json({ profile: veterinario });
 };
 
@@ -83,16 +82,21 @@ const login = async (req, res) => {
   }
 };
 
-const forgotPassword = (req, res) =>{
+const forgotPassword = (req, res) => {
+  const { email } = req.body;
+  console.log(email);
+};
 
-}
+const checkToken = (req, res) => {};
 
-const checkToken = (req, res) =>{
+const newPassword = (req, res) => {};
 
-}
-
-const newPassword = (req, res) =>{
-
-}
-
-export { register, profile, confirm, login, forgotPassword, checkToken, newPassword };
+export {
+  register,
+  profile,
+  confirm,
+  login,
+  forgotPassword,
+  checkToken,
+  newPassword,
+};

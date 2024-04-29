@@ -18,8 +18,8 @@ router.post("/", register);
 router.get("/confirm/:token", confirm);
 router.post("/login", login);
 router.post("forgot-password", forgotPassword);
-router.get('/forgot-password/:token', checkToken)
-router.post('/forgot-password/:token', newPassword)
+
+router.route('/forgot-password/:token').get(checkToken).post(newPassword)
 
 //private
 router.get("/profile", checkAuth, profile);
