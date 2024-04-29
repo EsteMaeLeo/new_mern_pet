@@ -82,9 +82,14 @@ const login = async (req, res) => {
   }
 };
 
-const forgotPassword = (req, res) => {
+const forgotPassword = async (req, res) => {
   const { email } = req.body;
-  console.log(email);
+
+  const vetFind = await veterinarian.findOne({ email });
+  if (!vetFind) {
+    const error = new Error("User doesnt exist....");
+    return res.status(403).json({ msg: error.message });
+  }
 };
 
 const checkToken = (req, res) => {};
