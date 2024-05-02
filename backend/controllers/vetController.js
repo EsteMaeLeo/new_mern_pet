@@ -108,9 +108,10 @@ const checkToken = async (req, res) => {
   const validToken =  await veterinarian.findOne({token})
 
   if(validToken){
-
+    res.json({ msg: "Valid Token" });
   }else{
-    
+    const error = new Error("Token not valid....");
+    return res.status(403).json({ msg: error.message });
   }
 };
 
