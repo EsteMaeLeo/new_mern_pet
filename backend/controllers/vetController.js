@@ -102,9 +102,16 @@ const forgotPassword = async (req, res) => {
   } catch (error) {}
 };
 
-const checkToken = (req, res) => {
+const checkToken = async (req, res) => {
   const {token} = req.params;
   console.log(token) 
+  const validToken =  await veterinarian.findOne({token})
+
+  if(validToken){
+
+  }else{
+    
+  }
 };
 
 const newPassword = (req, res) => {};
