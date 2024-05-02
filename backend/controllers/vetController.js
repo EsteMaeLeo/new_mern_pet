@@ -102,7 +102,10 @@ const forgotPassword = async (req, res) => {
   } catch (error) {}
 };
 
-const checkToken = (req, res) => {};
+const checkToken = (req, res) => {
+  const {token} = req.params;
+  console.log(token) 
+};
 
 const newPassword = (req, res) => {};
 
