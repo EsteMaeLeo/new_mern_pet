@@ -115,7 +115,17 @@ const checkToken = async (req, res) => {
   }
 };
 
-const newPassword = (req, res) => {};
+const newPassword = async (req, res) => {
+  const { token } = req.params;
+  const { password } = req.body;
+  console.log(token, password);
+
+  const vet = await veterinarian.findOne({ token });
+  if (!vet) {
+    const error = new Error("Token not valid....");
+    return res.status(403).json({ msg: error.message });
+  }
+};
 
 export {
   register,
