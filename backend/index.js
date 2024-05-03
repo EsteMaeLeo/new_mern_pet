@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import chalk from "chalk";
 import connectDB from "./config/db.js";
 import vetRoutes from "./routes/vetRoutes.js";
-import pacientRoutes from './routes/pacientRoutes.js'
+import pacientRoutes from './routes/patientRoutes.js'
 
 const app = express();
 dotenv.config();

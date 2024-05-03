@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import veterinarian from "./veterinarian";
 
-const pacientShema = mongoose.Schema(
+const patientShema = mongoose.Schema(
   {
     name: {
       type: String,
@@ -32,6 +32,6 @@ const pacientShema = mongoose.Schema(
     timestemps: true,
   }
 );
-const Pacient = mongoose.model("Pacient", pacientShema);
+const Patient = mongoose.model("Patient", patientShema);
 
-export default Pacient;
+export default Patient;
