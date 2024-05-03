@@ -103,13 +103,13 @@ const forgotPassword = async (req, res) => {
 };
 
 const checkToken = async (req, res) => {
-  const {token} = req.params;
-  console.log(token) 
-  const validToken =  await veterinarian.findOne({token})
+  const { token } = req.params;
+  console.log(token);
+  const validToken = await veterinarian.findOne({ token });
 
-  if(validToken){
+  if (validToken) {
     res.json({ msg: "Valid Token" });
-  }else{
+  } else {
     const error = new Error("Token not valid....");
     return res.status(403).json({ msg: error.message });
   }
