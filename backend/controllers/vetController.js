@@ -125,6 +125,15 @@ const newPassword = async (req, res) => {
     const error = new Error("Token not valid....");
     return res.status(403).json({ msg: error.message });
   }
+  try {
+    console.log(vet);
+    vet.token = null;
+    vet.password = password;
+    await vet.save();
+    res.json({ msg: "Password save successfully" });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export {
