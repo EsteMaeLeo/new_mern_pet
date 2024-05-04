@@ -1,14 +1,15 @@
 import Patient from "../models/Patient.js";
 
-const addPatient = (req, res) => {
-  console.log(req.body);
+const addPatient = async (req, res) => {
   const patient = new Patient(req.body);
+  patient.vet = req.veterinario._id;
   console.log(patient);
 
   try {
-    
+    const patientSave = await patient.save();
+    res.json(patientSave);
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 };
 

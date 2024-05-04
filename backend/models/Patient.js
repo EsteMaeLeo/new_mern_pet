@@ -24,7 +24,7 @@ const patientShema = mongoose.Schema(
       type: String,
       require: true,
     },
-    doc: {
+    vet: {
       type: mongoose.Schema.ObjectId,
       ref: "veterinarian",
     },
