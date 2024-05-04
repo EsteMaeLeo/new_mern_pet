@@ -11,7 +11,7 @@ dotenv.config();
 connectDB();
 app.use(express.json())
 app.use("/api/veterinarian", vetRoutes);
-app.use("/api/pacients", pacientRoutes);
+app.use("/api/patient", pacientRoutes);
 
 const PORT = process.env.PORT || 4005;
 

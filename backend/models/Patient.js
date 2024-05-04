@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import veterinarian from "./veterinarian";
+import veterinarian from "./veterinarian.js";
 
 const patientShema = mongoose.Schema(
   {
@@ -18,6 +18,7 @@ const patientShema = mongoose.Schema(
     registerDate: {
       type: Date,
       require: true,
+      default: Date.now(),
     },
     symptoms: {
       type: String,
