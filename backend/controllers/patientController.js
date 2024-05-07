@@ -13,6 +13,8 @@ const addPatient = async (req, res) => {
   }
 };
 
-const getPatient = (req, res) => {};
+const getPatient = async (req, res) => {
+    const patient = await Patient.find()
+};
 
 export { addPatient, getPatient };
