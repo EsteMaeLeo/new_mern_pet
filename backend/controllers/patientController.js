@@ -13,10 +13,14 @@ const addPatient = async (req, res) => {
   }
 };
 
-const getPatient = async (req, res) => {
+const getPatients = async (req, res) => {
     const patient = await Patient.find()
     .where("vet")
     .equals(req.veterinario)
 };
 
-export { addPatient, getPatient };
+const getPatient= async (req, res) => {}
+const updatePatient= async (req, res) => {}
+const deletePatient= async (req, res) => {}
+
+export { addPatient, getPatients, getPatient, updatePatient, deletePatient };

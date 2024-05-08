@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.route("/").post(checkAuth, addPatient).get(checkAuth, getPatient);
 
-router.route(':id').get(checkAuth, getPatient).put(checkAuth, updatePatient)
+router.route(":id").get(checkAuth, getPatient).put(checkAuth, updatePatient).delete(checkAuth, deletePatient);
 
 export default router;
