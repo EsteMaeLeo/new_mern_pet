@@ -53,17 +53,22 @@ const updatePatient = async (req, res) => {
 };
 
 const deletePatient = async (req, res) => {
-    const { id } = req.params;
-    const patient = await Patient.findById(id);
-  
-    if (!patient) {
-      res.status(404).json({ msg: "Patient not found" });
-    }
-  
-    if (patient.vet._id.ToString() !== req.vet._id.toString()) {
-      return res.json({ msg: "Action or request not valid" });
-    }
-  
+  const { id } = req.params;
+  const patient = await Patient.findById(id);
+
+  if (!patient) {
+    res.status(404).json({ msg: "Patient not found" });
+  }
+
+  if (patient.vet._id.ToString() !== req.vet._id.toString()) {
+    return res.json({ msg: "Action or request not valid" });
+  }
+
+  try {
+    await patient.deleteOne();
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export { addPatient, getPatients, getPatient, updatePatient, deletePatient };
