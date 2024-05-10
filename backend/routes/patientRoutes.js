@@ -13,7 +13,7 @@ const router = express.Router();
 router.route("/").post(checkAuth, addPatient).get(checkAuth, getPatients);
 
 router
-  .route(":id")
+  .route("/:id")
   .get(checkAuth, getPatient)
   .put(checkAuth, updatePatient)
   .delete(checkAuth, deletePatient);

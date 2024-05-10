@@ -15,20 +15,23 @@ const addPatient = async (req, res) => {
 
 const getPatients = async (req, res) => {
   const patients = await Patient.find().where("vet").equals(req.veterinario);
-
+console.log(req.veterinario)
   res.json(patients);
 };
 
 const getPatient = async (req, res) => {
   const { id } = req.params;
-  const patient = await Patient.findById(id);
 
-  if (patient.vet._id.ToString() !== req.vet._id.toString()) {
+  const patientFind = await Patient.findById(id.trim());  
+  console.log(patientFind)
+  console.log(req.veterinario)
+  
+  if(patientFind.vet._id.toString() !== req.veterinario._id.toString()) {
     return res.json({ msg: "Action or request not valid" });
   }
 
-  if (patient) {
-    res.json(patient);
+  if (patientFind) {
+    res.json(patientFind);
   }
 };
 

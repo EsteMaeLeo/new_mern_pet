@@ -16,7 +16,7 @@ const checkAuth = async (req, res, next) => {
         "-password -token -confirm"
       );
       req.veterinario = vet;
-      console.log(vet);
+      console.log("from checkAuth", req.veterinario);
       return next();
     } catch (error) {
       const e = new Error("Token not valid...");
