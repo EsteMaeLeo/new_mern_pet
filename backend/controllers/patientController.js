@@ -43,7 +43,7 @@ const updatePatient = async (req, res) => {
     res.status(404).json({ msg: "Patient not found" });
   }
 
-  if (patient.vet._id.ToString() !== req.vet._id.toString()) {
+  if (patient.vet._id.ToString() !== req.veterinario._id.toString()) {
     return res.json({ msg: "Action or request not valid" });
   }
 
