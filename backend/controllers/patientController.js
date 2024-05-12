@@ -3,7 +3,6 @@ import Patient from "../models/Patient.js";
 const addPatient = async (req, res) => {
   const patient = new Patient(req.body);
   patient.vet = req.veterinario._id;
-  console.log(patient);
 
   try {
     const patientSave = await patient.save();
@@ -15,18 +14,16 @@ const addPatient = async (req, res) => {
 
 const getPatients = async (req, res) => {
   const patients = await Patient.find().where("vet").equals(req.veterinario);
-console.log(req.veterinario)
+
   res.json(patients);
 };
 
 const getPatient = async (req, res) => {
   const { id } = req.params;
 
-  const patientFind = await Patient.findById(id.trim());  
-  console.log(patientFind)
-  console.log(req.veterinario)
-  
-  if(patientFind.vet._id.toString() !== req.veterinario._id.toString()) {
+  const patientFind = await Patient.findById(id.trim());
+
+  if (patientFind.vet._id.toString() !== req.veterinario._id.toString()) {
     return res.json({ msg: "Action or request not valid" });
   }
 
@@ -42,7 +39,6 @@ const updatePatient = async (req, res) => {
   if (!patient) {
     res.status(404).json({ msg: "Patient not found" });
   }
-  console.log(patient.vet._id.toString())
 
   if (patient.vet._id.toString() !== req.veterinario._id.toString()) {
     return res.json({ msg: "Action or request not valid" });
@@ -64,20 +60,20 @@ const updatePatient = async (req, res) => {
 
 const deletePatient = async (req, res) => {
   const { id } = req.params;
-  const patient = await Patient.findById(id);
-
-  if (!patient) {
-    res.status(404).json({ msg: "Patient not found" });
-  }
-
-  if (patient.vet._id.ToString() !== req.vet._id.toString()) {
-    return res.json({ msg: "Action or request not valid" });
-  }
 
   try {
-    await patient.deleteOne();
+    const patient = await Patient.findById(id);
+
+    if (patient.vet._id.toString() !== req.veterinario._id.toString()) {
+      return res.json({ msg: "Action or request not valid" });
+    }
+
+    try {
+      await patient.deleteOne();
+      res.json({ msg: "Patient deleted" });
+    } catch (error) {}
   } catch (error) {
-    console.log(error);
+    res.status(404).json({ msg: "Patient not found" });
   }
 };
 
