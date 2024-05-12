@@ -42,12 +42,17 @@ const updatePatient = async (req, res) => {
   if (!patient) {
     res.status(404).json({ msg: "Patient not found" });
   }
+  console.log(patient.vet._id.toString())
 
-  if (patient.vet._id.ToString() !== req.veterinario._id.toString()) {
+  if (patient.vet._id.toString() !== req.veterinario._id.toString()) {
     return res.json({ msg: "Action or request not valid" });
   }
 
-  patient.name = req.body.name;
+  patient.name = req.body.name || patient.name;
+  patient.owner = req.body.owner || patient.owner;
+  patient.email = req.body.email || patient.email;
+  patient.registerDate = req.body.registerDate || patient.registerDate;
+  patient.symptoms = req.body.symptoms || patient.symptoms;
 
   try {
     const patientUpdate = await patient.save();
