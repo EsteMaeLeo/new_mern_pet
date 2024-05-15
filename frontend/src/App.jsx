@@ -1,11 +1,19 @@
 
-
+import {BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
  
 
   return (
-     <h1 className="font-bold text-2xl">Hello VET APP</h1>
+
+     <BrowserRouter>
+      <Routes>
+          <Route>
+            
+          </Route>
+      </Routes>
+     </BrowserRouter>
+     
   )
 }
 
