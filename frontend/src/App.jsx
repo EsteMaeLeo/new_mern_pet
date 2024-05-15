@@ -1,20 +1,17 @@
-import AuthLayout from './layout/AuthLayout'
-import {BrowserRouter, Routes, Route } from 'react-router-dom'
+import AuthLayout from "./layout/AuthLayout";
+import Login from "./pages/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
- 
-
   return (
-
-     <BrowserRouter>
+    <BrowserRouter>
       <Routes>
-          <Route path="/" element={<AuthLayout/>}>
-
-          </Route>
+        <Route path="/" element={<AuthLayout />}>
+          <Route index element={<Login />} />
+        </Route>
       </Routes>
-     </BrowserRouter>
-     
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
