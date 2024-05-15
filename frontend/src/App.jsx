@@ -1,4 +1,4 @@
-
+import AuthLayout from './layout/AuthLayout'
 import {BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
 
      <BrowserRouter>
       <Routes>
-          <Route>
-            
+          <Route path="/" element={<AuthLayout/>}>
+
           </Route>
       </Routes>
      </BrowserRouter>
