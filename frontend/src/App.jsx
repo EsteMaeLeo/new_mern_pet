@@ -13,7 +13,7 @@ function App() {
           <Route index element={<Login />} />
           <Route path="signup" element={<Signup />}/>
           <Route path="forgot-password" element={<ForgotPassword />}/>
-          <Route path="confirm" element={<ConfimUser />}/>
+          <Route path="confirm/:id" element={<ConfimUser />}/>
         </Route>
       </Routes>
     </BrowserRouter>
