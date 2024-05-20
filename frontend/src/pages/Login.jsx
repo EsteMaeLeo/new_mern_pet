@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <>
@@ -36,8 +37,16 @@ const Login = () => {
           />
         </form>
 
-        <nav>
-          <a href="/signup">Dont have account? SignUp</a>
+        <nav className="mt-10 lg:flex lg:justify-between">
+          <Link className="block text-center my-5 text-gray-600" to="/signup">
+            Dont have account? SignUp
+          </Link>
+          <Link
+            className="block text-center my-5 text-gray-600"
+            to="/forgot-password"
+          >
+            Forgot Password
+          </Link>
         </nav>
       </div>
     </>
