@@ -57,7 +57,7 @@ const Signup = () => {
 
           <input
             type="submit"
-            value="Login"
+            value="Create"
             className="bg-indigo-600 w-full py-3 px-25 rounded-2xl text-white uppercase font-bold mt-5 hover:cursor-pointer hover:bg-indigo-800"
           />
         </form>
