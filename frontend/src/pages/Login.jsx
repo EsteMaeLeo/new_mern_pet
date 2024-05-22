@@ -7,7 +7,7 @@ const Login = () => {
           Login and Manage your <span className="text-black">Patients</span>
         </h1>
       </div>
-      <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-xl">
+      <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-xl bg-white">
         <form>
           <div className="my-5">
             <label className="uppercase text-gray-7-- block text-xl font-bold">
