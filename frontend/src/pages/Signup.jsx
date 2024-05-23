@@ -2,6 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
   return (
     <>
       <div>
@@ -31,6 +36,8 @@ const Signup = () => {
               type="text"
               placeholder="Your Name"
               className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
 
