@@ -7,6 +7,11 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const handleSubmit = e =>{
+    e.preventDefault();
+    console.log('sending form')
+  }
+
   return (
     <>
       <div>
@@ -16,7 +21,9 @@ const Signup = () => {
       </div>
 
       <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-lg bg-white">
-        <form>
+        
+        <form onSubmit={handleSubmit}>
+
           <div className="my-5">
             <label className="uppercase text-gray-7-- block text-xl font-bold">
               Email
@@ -25,6 +32,8 @@ const Signup = () => {
               type="email"
               placeholder="Your Email"
               className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -49,6 +58,8 @@ const Signup = () => {
               type="password"
               placeholder="Your Password"
               className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
@@ -60,6 +71,8 @@ const Signup = () => {
               type="password"
               placeholder="Your Password"
               className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
 
