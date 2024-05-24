@@ -7,10 +7,22 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleSubmit = e =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('sending form')
-  }
+
+    if ([name, email, password, confirmPassword].includes("")) {
+      console.log("Empty fields");
+      return;
+    }
+
+    if(password !== confirmPassword){
+        console.log("Passwords not match")
+    }
+
+    if(password.length<6){
+        console.log("Password is to short")
+    }
+  };
 
   return (
     <>
@@ -21,9 +33,7 @@ const Signup = () => {
       </div>
 
       <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-lg bg-white">
-        
         <form onSubmit={handleSubmit}>
-
           <div className="my-5">
             <label className="uppercase text-gray-7-- block text-xl font-bold">
               Email
