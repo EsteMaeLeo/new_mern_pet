@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Alert from "../components/Alert";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -7,22 +8,30 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const [alert, setAlert] = useState({});
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if ([name, email, password, confirmPassword].includes("")) {
-      console.log("Empty fields");
+      setAlert({ msg: "Empty fields", error: true });
       return;
     }
 
-    if(password !== confirmPassword){
-        console.log("Passwords not match")
+    if (password !== confirmPassword) {
+      setAlert({ msg: "Passwords not match", error: true });
+      return
     }
 
-    if(password.length<6){
-        console.log("Password is to short")
+    if (password.length < 6) {
+      setAlert({ msg: "Password is to short", error: true });
+      return
     }
+
+    setAlert({});
   };
+
+  const { msg } = alert;
 
   return (
     <>
@@ -33,6 +42,8 @@ const Signup = () => {
       </div>
 
       <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-lg bg-white">
+        {msg && <Alert alert={alert} />}
+
         <form onSubmit={handleSubmit}>
           <div className="my-5">
             <label className="uppercase text-gray-7-- block text-xl font-bold">
