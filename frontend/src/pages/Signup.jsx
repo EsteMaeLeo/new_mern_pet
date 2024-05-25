@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Alert from "../components/Alert";
+import axios from "axios";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -10,7 +11,7 @@ const Signup = () => {
 
   const [alert, setAlert] = useState({});
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if ([name, email, password, confirmPassword].includes("")) {
@@ -20,22 +21,22 @@ const Signup = () => {
 
     if (password !== confirmPassword) {
       setAlert({ msg: "Passwords not match", error: true });
-      return
+      return;
     }
 
     if (password.length < 6) {
       setAlert({ msg: "Password is to short", error: true });
-      return
+      return;
     }
 
     setAlert({});
 
-    try{
-        const url = "http://localhost:4005/api/veterinarian";
-        const response = await axios.post(url, {name,email,password})
-        console.log(response)
-    }cach(error){
-        console.log(error)
+    try {
+      const url = "http://localhost:4005/api/veterinarian";
+      const response = await axios.post(url, { name, email, password });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
     }
   };
 
