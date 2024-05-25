@@ -31,7 +31,9 @@ const Signup = () => {
     setAlert({});
 
     try{
-        const url = "http://localhost:4005/api/veterinarian"
+        const url = "http://localhost:4005/api/veterinarian";
+        const response = await axios.post(url, {name,email,password})
+        console.log(response)
     }cach(error){
         console.log(error)
     }
