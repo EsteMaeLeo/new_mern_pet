@@ -29,6 +29,12 @@ const Signup = () => {
     }
 
     setAlert({});
+
+    try{
+        const url = "http://localhost:4005/api/veterinarian"
+    }cach(error){
+        console.log(error)
+    }
   };
 
   const { msg } = alert;
