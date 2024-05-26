@@ -36,7 +36,7 @@ const Signup = () => {
       const response = await axios.post(url, { name, email, password });
       console.log(response);
     } catch (error) {
-      console.log(error);
+        setAlert({ msg: error.response.data.msg, error: true });
     }
   };
 
