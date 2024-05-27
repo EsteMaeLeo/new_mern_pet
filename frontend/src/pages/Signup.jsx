@@ -27,7 +27,7 @@ const Signup = () => {
     if (password.length < 6) {
       setAlert({ msg: "Password is to short", error: true });
       return;
-    }
+    } 
 
     setAlert({});
 
