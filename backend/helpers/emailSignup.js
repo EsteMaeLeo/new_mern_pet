@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer'
 
 const emailSignup = () =>{
-    var transport = nodemailer.createTransport({
+    const transport = nodemailer.createTransport({
         host: process.env.EMAIL_HOST,
         port: process.env.EMAIL_PORT,
         auth: {
