@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 
 const emailSignup = async (data) => {
-  const transport = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port: process.env.EMAIL_PORT,
     auth: {
@@ -13,7 +13,7 @@ const emailSignup = async (data) => {
   //sent email
   const { email, name, token } = data;
 
-  const info = await WebTransportError.sendMail({
+  const info = await transporter.sendMail({
     from: "VET App!",
     to: email,
     subject: "Check your account on VET App!",
