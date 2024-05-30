@@ -18,7 +18,9 @@ const emailSignup = async (data) =>{
         to:email,
         subject: 'Check your account on VET App!',
         text: 'Check your account on VET App!',
-        html: `
+        html: `<p> Hello ${name} check you account on VET App!</p>
+               <p> Your account is allready created check on the link: 
+            <a href="">Check account</a></p>
         `
       })
 }
