@@ -20,7 +20,7 @@ const emailSignup = async (data) => {
     text: "Check your account on VET App!",
     html: `<p> Hello ${name} check you account on VET App!</p>
                <p> Your account is allready created check on the link: 
-               <a href="${process.env.FRONTEND_URL}/confirm/${token}">Check account</a></p>
+               <a href="${process.env.FRONTEND_URL}confirm/${token}">Check account</a></p>
 
                <p>Ignore the message if you didnt create the account</p>
         `,
