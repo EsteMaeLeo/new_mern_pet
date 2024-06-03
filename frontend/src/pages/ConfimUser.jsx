@@ -1,8 +1,27 @@
 import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import axios from "axios";
 
 const ConfimUser = () => {
   const params = useParams();
   console.log(params);
+  const { id } = params;
+
+  useEffect(() => {
+    const confirmAccount = async () => {
+      try {
+        const url = `http://localhost:4005/api/veterinarian/confirm/${id}`;
+        const{data} = await axios(url)
+        console.log(data)
+
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    confirmAccount();
+  }, []);
+
   return (
     <>
       <div>
@@ -17,3 +36,4 @@ const ConfimUser = () => {
 };
 
 export default ConfimUser;
+0;
