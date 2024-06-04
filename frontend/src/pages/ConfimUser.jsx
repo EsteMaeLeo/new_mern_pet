@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Alert from "../components/Alert";
 
 const ConfimUser = () => {
+  const[accountConfirmm, setAccountConfirm] = useState;
+
   const params = useParams();
   console.log(params);
   const { id } = params;
