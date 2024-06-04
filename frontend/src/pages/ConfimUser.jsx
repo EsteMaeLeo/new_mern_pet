@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
+import Alert from "../components/Alert";
 
 const ConfimUser = () => {
   const params = useParams();
@@ -30,7 +31,9 @@ const ConfimUser = () => {
           <span className="text-black">Patients</span>
         </h1>
       </div>
-      <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-lg bg-white"></div>
+      <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-lg bg-white">
+        <Alert />
+      </div>
     </>
   );
 };
