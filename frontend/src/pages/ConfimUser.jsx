@@ -4,7 +4,7 @@ import axios from "axios";
 import Alert from "../components/Alert";
 
 const ConfimUser = () => {
-  const[accountConfirmm, setAccountConfirm] = useState;
+  const[accountConfirmm, setAccountConfirm] = useState(false);
 
   const params = useParams();
   console.log(params);
