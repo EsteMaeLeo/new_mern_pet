@@ -4,9 +4,9 @@ import axios from "axios";
 import Alert from "../components/Alert";
 
 const ConfimUser = () => {
-  const[accountConfirmm, setAccountConfirm] = useState(false);
+  const [accountConfirmm, setAccountConfirm] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [alert, setAlert] = useEffect({})
+  const [alert, setAlert] = useEffect({});
 
   const params = useParams();
   console.log(params);
@@ -16,13 +16,16 @@ const ConfimUser = () => {
     const confirmAccount = async () => {
       try {
         const url = `http://localhost:4005/api/veterinarian/confirm/${id}`;
-        const{data} = await axios(url)
-        console.log(data)
-
+        const { data } = await axios(url);
+        console.log(data);
       } catch (error) {
         console.log(error.response);
+        setAlert({
+          msg: error.response.data.msg,
+          error: true,
+        });
       }
-      setLoading(false)
+      setLoading(false);
     };
 
     confirmAccount();
@@ -37,7 +40,7 @@ const ConfimUser = () => {
         </h1>
       </div>
       <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-lg bg-white">
-        <Alert />
+        <Alert alert={alert} />
       </div>
     </>
   );
