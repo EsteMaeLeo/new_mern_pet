@@ -40,7 +40,7 @@ const ConfimUser = () => {
         </h1>
       </div>
       <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-lg bg-white">
-        <Alert alert={alert} />
+        {!loading && <Alert alert={alert} />}
       </div>
     </>
   );
