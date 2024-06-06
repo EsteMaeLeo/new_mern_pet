@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Alert from "../components/Alert";
@@ -18,6 +18,11 @@ const ConfimUser = () => {
         const url = `http://localhost:4005/api/veterinarian/confirm/${id}`;
         const { data } = await axios(url);
         console.log(data);
+
+        setAccountConfirm(true);
+        setAlert({
+          msg: data.msg,
+        });
       } catch (error) {
         console.log(error.response);
         setAlert({
@@ -41,6 +46,11 @@ const ConfimUser = () => {
       </div>
       <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-lg bg-white">
         {!loading && <Alert alert={alert} />}
+        {accountConfirmm && (
+          <Link className="block text-center my-5 text-gray-600" to="/">
+            SignIn
+          </Link>
+        )}
       </div>
     </>
   );
