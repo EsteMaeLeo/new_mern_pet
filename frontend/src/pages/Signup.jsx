@@ -30,9 +30,9 @@ const Signup = () => {
     } 
 
     setAlert({});
-
+    console.log(`${import.meta.env.VITE_BACKEND_URL}`)
     try {
-      const url = "http://localhost:4005/api/veterinarian";
+      const url = `${import.meta.env.VITE_BACKEND_URL}/api/veterinarian`;
       const response = await axios.post(url, { name, email, password });
       console.log(response);
     } catch (error) {
@@ -41,7 +41,7 @@ const Signup = () => {
   };
 
   const { msg } = alert;
-
+console.log(msg)
   return (
     <>
       <div>
