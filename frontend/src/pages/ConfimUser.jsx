@@ -17,7 +17,6 @@ const ConfimUser = () => {
       try {
         const url = `http://localhost:4005/api/veterinarian/confirm/${id}`;
         const { data } = await axios(url);
-        console.log(data);
 
         setAccountConfirm(true);
         setAlert({
