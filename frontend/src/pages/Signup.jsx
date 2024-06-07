@@ -34,6 +34,10 @@ const Signup = () => {
     try {
       const url = `${import.meta.env.VITE_BACKEND_URL}/api/veterinarian`;
       const response = await axios.post(url, { name, email, password });
+      setAlert({
+        msg:'User created correctly. Please check your email.',
+        error:false
+      });
       console.log(response);
     } catch (error) {
         setAlert({ msg: error.response.data.msg, error: true });

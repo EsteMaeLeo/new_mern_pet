@@ -15,7 +15,7 @@ const ConfimUser = () => {
   useEffect(() => {
     const confirmAccount = async () => {
       try {
-        const url = `http://localhost:4005/api/veterinarian/confirm/${id}`;
+        const url = `${import.meta.env.VITE_BACKEND_URL}/api/veterinarian/confirm/${id}`;
         const { data } = await axios(url);
 
         setAccountConfirm(true);
