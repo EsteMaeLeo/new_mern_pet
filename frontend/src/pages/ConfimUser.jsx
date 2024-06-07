@@ -6,7 +6,7 @@ import Alert from "../components/Alert";
 const ConfimUser = () => {
   const [accountConfirmm, setAccountConfirm] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [alert, setAlert] = useEffect({});
+  const [alert, setAlert] = useState({});
 
   const params = useParams();
   console.log(params);
