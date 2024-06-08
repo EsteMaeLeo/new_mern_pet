@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Alert from "../components/Alert";
-import axios from "axios";
+import clientAxios from "../config/axios";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -32,8 +32,8 @@ const Signup = () => {
     setAlert({});
     console.log(`${import.meta.env.VITE_BACKEND_URL}`)
     try {
-      const url = `${import.meta.env.VITE_BACKEND_URL}/api/veterinarian`;
-      const response = await axios.post(url, { name, email, password });
+      const url = `/veterinarian`;
+      const response = await clientAxios.post(url, { name, email, password });
       setAlert({
         msg:'User created correctly. Please check your email.',
         error:false
