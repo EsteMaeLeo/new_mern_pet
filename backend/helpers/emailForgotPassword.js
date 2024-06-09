@@ -21,9 +21,9 @@ const emailSignup = async (data) => {
     html: `<p> Hello ${name} you had request recover your password</p>
 
                <p> Click on the link to recover your password: 
-               <a href="${process.env.FRONTEND_URL}confirm/${token}">Check account</a></p>
+               <a href="${process.env.FRONTEND_URL}forgot-password/${token}">Recover Password</a></p>
 
-               <p>Ignore the message if you didnt create the account</p>
+               <p>Ignore the message if you didnt recxover the password</p>
         `,
   });
 
