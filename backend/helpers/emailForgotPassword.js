@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-const emailSignup = async (data) => {
+const emailForgotPassword = async (data) => {
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port: process.env.EMAIL_PORT,
@@ -30,4 +30,4 @@ const emailSignup = async (data) => {
   console.log("Message sent: %s", info.messageId);
 };
 
-export default emailSignup;
+export default emailForgotPassword;
