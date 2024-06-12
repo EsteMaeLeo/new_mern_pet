@@ -2,6 +2,7 @@ import veterinarian from "../models/veterinarian.js";
 import generateJWT from "../helpers/generateJWT.js";
 import generateid from "../helpers/generateid.js";
 import emailSignup from "../helpers/emailSignup.js";
+import emailForgotPassword from "../helpers/emailForgotPassword.js";
 
 const register = async (req, res) => {
   console.log(req.body);
