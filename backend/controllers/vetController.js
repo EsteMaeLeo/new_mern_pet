@@ -104,7 +104,13 @@ const forgotPassword = async (req, res) => {
   try {
     vetFind.token = generateid();
     await vetFind.save();
-    emailForgotPassword();
+
+    emailForgotPassword({
+      email,
+      name: vetFind.name,
+      token: vetFind.token,
+    });
+
     res.json({
       msg: "Check the email for the instructions to reset the password",
     });
