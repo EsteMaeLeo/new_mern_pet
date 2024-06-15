@@ -23,13 +23,13 @@ const register = async (req, res) => {
     //save new veterinarian
     const vet = new veterinarian(req.body);
     const vetSave = await vet.save();
-    
+
     //sent email
     emailSignup({
       email,
       name,
-      token: vetSave.token
-    })
+      token: vetSave.token,
+    });
 
     res.json(vetSave);
   } catch (error) {
@@ -103,11 +103,11 @@ const forgotPassword = async (req, res) => {
 
   try {
     vetFind.token = generateid();
-    await vetFind.save(
-      res.json({
-        msg: "Check the email for the instructions to reset the password",
-      })
-    );
+    await vetFind.save();
+    emailForgotPassword();
+    res.json({
+      msg: "Check the email for the instructions to reset the password",
+    });
   } catch (error) {}
 };
 
