@@ -1,8 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Alert from "../components/Alert";
+import clientAxios from "../config/axios";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
+  const [alert, setAlert] = useState({});
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (email === "") {
+      setAlert({ msg: "Email is mandatory", error: true });
+    }
+  };
 
   return (
     <>
@@ -14,7 +25,7 @@ const ForgotPassword = () => {
       </div>
 
       <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-lg bg-white">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="my-5">
             <label className="uppercase text-gray-7-- block text-xl font-bold">
               Email
