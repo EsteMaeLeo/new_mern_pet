@@ -12,6 +12,16 @@ const ForgotPassword = () => {
 
     if (email === "" || email.length < 6) {
       setAlert({ msg: "Email is mandatory", error: true });
+      return;
+    }
+    try {
+      const { data } = await clientAxios.post("/veterinarian/forgot-password", {
+        email,
+      });
+
+      console.log(data);
+    } catch (error) {
+      setAlert({ msg: error.response.data.msg, error: true });
     }
   };
 
