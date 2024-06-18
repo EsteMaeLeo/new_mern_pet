@@ -10,7 +10,7 @@ const ForgotPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (email === "") {
+    if (email === "" || email.length < 6) {
       setAlert({ msg: "Email is mandatory", error: true });
     }
   };
