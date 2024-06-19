@@ -1,9 +1,13 @@
-
-
 const NewPassword = () => {
   return (
-    <h1>From new password</h1>
-  )
-}
+    <>
+      <div>
+        <h1 className="text-indigo-600 font-black text-5xl">
+          Recover your password and keep record of <span className="text-black">Your Patients</span>
+        </h1>
+      </div>
+    </>
+  );
+};
 
-export default NewPassword
+export default NewPassword;
