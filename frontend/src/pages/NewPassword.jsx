@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 const NewPassword = () => {
+  const [password, setPassword] = useState("");
   return (
     <>
       <div>
