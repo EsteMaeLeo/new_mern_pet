@@ -21,7 +21,7 @@ const NewPassword = () => {
               placeholder="Your Password"
               className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
               value={password}
-             
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
         </form>
