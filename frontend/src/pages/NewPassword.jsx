@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const NewPassword = () => {
   const [password, setPassword] = useState("");
+  df;
   return (
     <>
       <div>
@@ -14,16 +15,21 @@ const NewPassword = () => {
         <form>
           <div className="my-5">
             <label className="uppercase text-gray-7-- block text-xl font-bold">
-              Password
+              New Password
             </label>
             <input
               type="password"
-              placeholder="Your Password"
+              placeholder="Your New Password"
               className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+          <input
+            type="submit"
+            value="Submit"
+            className="bg-indigo-600 w-full py-3 px-25 rounded-2xl text-white uppercase font-bold mt-5 hover:cursor-pointer hover:bg-indigo-800"
+          />
         </form>
       </div>
     </>
