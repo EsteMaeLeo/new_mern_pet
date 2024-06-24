@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const NewPassword = () => {
   const [password, setPassword] = useState("");
-  df;
+  
+  useEffect(()=>{
+    const checkTocken = async ()=>{}
+  })
+
   return (
     <>
       <div>
