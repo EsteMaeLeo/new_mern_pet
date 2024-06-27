@@ -4,7 +4,8 @@ const NewPassword = () => {
   const [password, setPassword] = useState("");
   
   useEffect(()=>{
-    const checkTocken = async ()=>{
+    const checkTocken = async (req, res)=>{
+      const {token} = req.params
       console.log('***')
     }
   })
