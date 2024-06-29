@@ -30,7 +30,7 @@ const Signup = () => {
     } 
 
     setAlert({});
-    console.log(`${import.meta.env.VITE_BACKEND_URL}`)
+
     try {
       const url = `/veterinarian`;
       const response = await clientAxios.post(url, { name, email, password });
