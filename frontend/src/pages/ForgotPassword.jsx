@@ -19,8 +19,7 @@ const ForgotPassword = () => {
         email,
       });
 
-      console.log(data);
-      setAlert({msg: data.msg})
+
     } catch (error) {
       setAlert({ msg: error.response.data.msg, error: true });
     }
