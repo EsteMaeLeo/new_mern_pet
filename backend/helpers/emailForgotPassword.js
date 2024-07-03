@@ -21,7 +21,7 @@ const emailForgotPassword = async (data) => {
     html: `<p> Hello ${name} you had request recover your password</p>
 
                <p> Click on the next link to create new password: 
-               <a href="${process.env.FRONTEND_URL}forgot-password/${token}">create new password</a></p>
+               <a href="${process.env.FRONTEND_URL}/forgot-password/${token}">create new password</a></p>
 
                <p>Ignore the message if you didnt recover the password</p>
         `,
