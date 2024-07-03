@@ -15,6 +15,8 @@ const ForgotPassword = () => {
       return;
     }
     try {
+      const url = clientAxios.defaults.baseUrl;
+      console.log(url);
       const { data } = await clientAxios.post("/veterinarian/forgot-password", {
         email,
       });
