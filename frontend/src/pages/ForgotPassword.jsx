@@ -26,6 +26,8 @@ const ForgotPassword = () => {
     }
   };
 
+  const {msg} = alert;
+
   return (
     <>
       <div>
@@ -36,7 +38,9 @@ const ForgotPassword = () => {
       </div>
 
       <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-lg bg-white">
+      {msg && <Alert alert={alert} />}
         <form onSubmit={handleSubmit}>
+
           <div className="my-5">
             <label className="uppercase text-gray-7-- block text-xl font-bold">
               Email
