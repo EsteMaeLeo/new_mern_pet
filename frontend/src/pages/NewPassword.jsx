@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 const NewPassword = () => {
   const [password, setPassword] = useState("");
-  
-  useEffect(()=>{
-    const checkTocken = async (req, res)=>{
-      const {token} = req.params
+
+  useEffect(() => {
+    const checkTocken = async (req, res) => {
+      const { token } = req.params
       console.log('***')
     }
   })
@@ -34,7 +34,7 @@ const NewPassword = () => {
           </div>
           <input
             type="submit"
-            value="Submit"
+            value="Save"
             className="bg-indigo-600 w-full py-3 px-25 rounded-2xl text-white uppercase font-bold mt-5 hover:cursor-pointer hover:bg-indigo-800"
           />
         </form>
