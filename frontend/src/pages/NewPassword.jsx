@@ -5,10 +5,10 @@ const NewPassword = () => {
 
   useEffect(() => {
     const checkTocken = async (req, res) => {
-      const { token } = req.params
-      console.log('***')
-    }
-  })
+      const { token } = req.params;
+      console.log("***");
+    };
+  });
 
   return (
     <>
@@ -35,7 +35,7 @@ const NewPassword = () => {
           <input
             type="submit"
             value="Save"
-            className="bg-indigo-600 w-full py-3 px-10 rounded-2xl text-white uppercase font-bold mt-5 hover:cursor-pointer hover:bg-indigo-800"
+            className="bg-indigo-600 w-full py-3 px-10 rounded-2xl text-white uppercase font-bold mt-5 hover:cursor-pointer hover:bg-indigo-800 md:w-auto"
           />
         </form>
       </div>
