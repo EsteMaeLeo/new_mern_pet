@@ -1,19 +1,35 @@
 import { useEffect, useState } from "react";
-import {useParams} from 'react-router-dom'
+import { useParams } from "react-router-dom";
+import Alert from "../components/Alert";
+import clientAxios from "../config/axios";
 
 const NewPassword = () => {
-
   const [password, setPassword] = useState("");
+  const [alert, setAlert] = useState({});
   const params = useParams();
+  const { token } = params;
 
   console.log(params);
 
   useEffect(() => {
-    const checkTocken = async (req, res) => {
- 
+    const checkToken = async () => {
+      try {
+        await clientAxios(`/veterinarian/forgot-password/${token}`);
+        setAlert({
+          msg: "Write new password",
+        });
+      } catch (error) {
+        setAlert({
+          msg: "Error on the link",
+          error: true,
+        });
+      }
     };
-  },[]);
 
+    checkToken();
+  }, []);
+
+  const { msg } = alert;
   return (
     <>
       <div>
@@ -24,6 +40,7 @@ const NewPassword = () => {
       </div>
       <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-lg bg-white">
         <form>
+          {msg && <Alert alert={alert} />}
           <div className="my-5">
             <label className="uppercase text-gray-7-- block text-xl font-bold">
               New Password
