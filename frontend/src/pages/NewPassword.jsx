@@ -35,7 +35,7 @@ const NewPassword = () => {
           <input
             type="submit"
             value="Save"
-            className="bg-indigo-600 w-full py-3 px-25 rounded-2xl text-white uppercase font-bold mt-5 hover:cursor-pointer hover:bg-indigo-800"
+            className="bg-indigo-600 w-full py-3 px-10 rounded-2xl text-white uppercase font-bold mt-5 hover:cursor-pointer hover:bg-indigo-800"
           />
         </form>
       </div>
