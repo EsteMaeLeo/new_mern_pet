@@ -30,7 +30,7 @@ app.use(express.json());
 app.use("/api/veterinarian", vetRoutes);
 app.use("/api/patient", pacientRoutes);
 
-const PORT = process.env.PORT || 4005;
+const PORT = process.env.PORT || 3010;
 
 app.listen(PORT, () => {
   console.log(chalk.bgBlue(`Server is runnig on port ${PORT} `));

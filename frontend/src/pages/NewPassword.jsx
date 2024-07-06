@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
+import {useParams} from 'react-router-dom'
 
 const NewPassword = () => {
+
   const [password, setPassword] = useState("");
+  const params = useParams();
+
+  console.log(params);
 
   useEffect(() => {
     const checkTocken = async (req, res) => {
-      const { token } = req.params;
-      console.log("***");
+ 
     };
-  });
+  },[]);
 
   return (
     <>
