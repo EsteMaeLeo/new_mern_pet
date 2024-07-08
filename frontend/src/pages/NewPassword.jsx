@@ -6,6 +6,8 @@ import clientAxios from "../config/axios";
 const NewPassword = () => {
   const [password, setPassword] = useState("");
   const [alert, setAlert] = useState({});
+  const [tokenValid, setTokenValid] = useState(false);
+
   const params = useParams();
   const { token } = params;
 
@@ -18,6 +20,7 @@ const NewPassword = () => {
         setAlert({
           msg: "Write new password",
         });
+        setTokenValid(true);
       } catch (error) {
         setAlert({
           msg: "Error on the link",
@@ -39,8 +42,9 @@ const NewPassword = () => {
         </h1>
       </div>
       <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-lg bg-white">
+        {msg && <Alert alert={alert} />}
+
         <form>
-          {msg && <Alert alert={alert} />}
           <div className="my-5">
             <label className="uppercase text-gray-7-- block text-xl font-bold">
               New Password
