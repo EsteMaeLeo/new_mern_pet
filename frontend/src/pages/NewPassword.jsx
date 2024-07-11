@@ -32,6 +32,8 @@ const NewPassword = () => {
     checkToken();
   }, []);
 
+  const handleSubmit = () => {}
+
   const { msg } = alert;
   return (
     <>
@@ -45,7 +47,7 @@ const NewPassword = () => {
         {msg && <Alert alert={alert} />}
 
         {tokenValid && (
-          <form>
+          <form  onSubmit={handleSubmit}>
             <div className="my-5">
               <label className="uppercase text-gray-7-- block text-xl font-bold">
                 New Password
