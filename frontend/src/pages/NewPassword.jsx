@@ -32,7 +32,10 @@ const NewPassword = () => {
     checkToken();
   }, []);
 
-  const handleSubmit = () => {}
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log(e)
+  }
 
   const { msg } = alert;
   return (
