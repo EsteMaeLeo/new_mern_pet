@@ -33,15 +33,31 @@ const NewPassword = () => {
   }, []);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    console.log(e)
-    if(password.length < 6 ){
+    e.preventDefault();
+    console.log(e);
+    if (password.length < 6) {
       setAlert({
-        msg: 'Password to short',
-        error: true
-      })
+        msg: "Password to short",
+        error: true,
+      });
+      return;
     }
-  }
+
+    try {
+      const url = `/veterinarian/forgot-password/${token}`;
+      const { data } = await clientAxios.post(url, { password });
+      console.log(data);
+
+      setAlert({
+        msg: data.msg,
+      });
+    } catch (error) {
+      setAlert({
+        msg: error.presonse.data.msg,
+        error: true,
+      });
+    }
+  };
 
   const { msg } = alert;
   return (
@@ -56,7 +72,7 @@ const NewPassword = () => {
         {msg && <Alert alert={alert} />}
 
         {tokenValid && (
-          <form  onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className="my-5">
               <label className="uppercase text-gray-7-- block text-xl font-bold">
                 New Password
