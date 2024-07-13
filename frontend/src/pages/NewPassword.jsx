@@ -37,7 +37,8 @@ const NewPassword = () => {
     console.log(e)
     if(password.length < 6 ){
       setAlert({
-        msg: 'Password to short'
+        msg: 'Password to short',
+        error: true
       })
     }
   }
