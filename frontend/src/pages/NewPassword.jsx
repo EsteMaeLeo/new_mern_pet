@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParam, Link } from "react-router-dom";
 import Alert from "../components/Alert";
 import clientAxios from "../config/axios";
 
@@ -72,25 +72,31 @@ const NewPassword = () => {
         {msg && <Alert alert={alert} />}
 
         {tokenValid && (
-          <form onSubmit={handleSubmit}>
-            <div className="my-5">
-              <label className="uppercase text-gray-7-- block text-xl font-bold">
-                New Password
-              </label>
+          <>
+            <form onSubmit={handleSubmit}>
+              <div className="my-5">
+                <label className="uppercase text-gray-7-- block text-xl font-bold">
+                  New Password
+                </label>
+                <input
+                  type="password"
+                  placeholder="Your New Password"
+                  className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
               <input
-                type="password"
-                placeholder="Your New Password"
-                className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                type="submit"
+                value="Save"
+                className="bg-indigo-600 w-full py-3 px-10 rounded-2xl text-white uppercase font-bold mt-5 hover:cursor-pointer hover:bg-indigo-800 md:w-auto"
               />
-            </div>
-            <input
-              type="submit"
-              value="Save"
-              className="bg-indigo-600 w-full py-3 px-10 rounded-2xl text-white uppercase font-bold mt-5 hover:cursor-pointer hover:bg-indigo-800 md:w-auto"
-            />
-          </form>
+            </form>
+
+            <Link className="block text-center my-5 text-gray-600" to="/">
+              Do you have account? Sign
+            </Link>
+          </>
         )}
       </div>
     </>
