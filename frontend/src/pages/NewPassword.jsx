@@ -5,10 +5,11 @@ import clientAxios from "../config/axios";
 
 const NewPassword = () => {
   const [password, setPassword] = useState("");
+  const [newPassword, setNewPassword] = useState(false);
   const [alert, setAlert] = useState({});
   const [tokenValid, setTokenValid] = useState(false);
 
-  const params = useParams();
+  const params = useParam();
   const { token } = params;
 
   console.log(params);
@@ -94,7 +95,7 @@ const NewPassword = () => {
             </form>
 
             <Link className="block text-center my-5 text-gray-600" to="/">
-              Do you have account? Sign
+              Sign In
             </Link>
           </>
         )}
