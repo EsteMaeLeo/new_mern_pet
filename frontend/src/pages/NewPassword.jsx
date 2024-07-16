@@ -36,7 +36,7 @@ const NewPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(e);
-    if (password.length < 6) {
+    if (password.length < 6) {z
       setAlert({
         msg: "Password to short",
         error: true,
