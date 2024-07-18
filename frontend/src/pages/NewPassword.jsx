@@ -94,9 +94,9 @@ const NewPassword = () => {
               />
             </form>
 
-            <Link className="block text-center my-5 text-gray-600" to="/">
+            {newPassword && <Link className="block text-center my-5 text-gray-600" to="/">
               Sign In
-            </Link>
+            </Link>}
           </>
         )}
       </div>
