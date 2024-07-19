@@ -53,6 +53,7 @@ const NewPassword = () => {
         msg: data.msg,
       });
     } catch (error) {
+      console.log(error);
       setAlert({
         msg: error.presonse.data.msg,
         error: true,
