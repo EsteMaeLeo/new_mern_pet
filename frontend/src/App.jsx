@@ -5,6 +5,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ConfimUser from "./pages/ConfimUser";
 import NewPassword from "./pages/NewPassword";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthProvider";
 
 function App() {
   return (
