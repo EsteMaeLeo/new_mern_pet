@@ -6,7 +6,7 @@ const AuthProvider = ({children} ) => {
 
     //const {children} = props;
     const [auth, setAuth] = useState({})
-
+    console.log(children)
     return(
         <AuthContext.Provider>
             value={{
@@ -19,3 +19,4 @@ const AuthProvider = ({children} ) => {
 
 export { AuthProvider };
 export default AuthContext;
+
