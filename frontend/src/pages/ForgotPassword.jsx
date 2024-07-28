@@ -2,10 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Alert from "../components/Alert";
 import clientAxios from "../config/axios";
+import useAuth from "../hooks/useAuth";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [alert, setAlert] = useState({});
+
+  const { auth } = useAuth();
+  console.log(auth);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,13 +26,13 @@ const ForgotPassword = () => {
       });
 
       console.log(data);
-      setAlert({msg: data.msg})
+      setAlert({ msg: data.msg });
     } catch (error) {
       setAlert({ msg: error.response.data.msg, error: true });
     }
   };
 
-  const {msg} = alert;
+  const { msg } = alert;
 
   return (
     <>
@@ -40,9 +44,8 @@ const ForgotPassword = () => {
       </div>
 
       <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-lg bg-white">
-      {msg && <Alert alert={alert} />}
+        {msg && <Alert alert={alert} />}
         <form onSubmit={handleSubmit}>
-
           <div className="my-5">
             <label className="uppercase text-gray-7-- block text-xl font-bold">
               Email
