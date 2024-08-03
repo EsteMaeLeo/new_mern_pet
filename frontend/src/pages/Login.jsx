@@ -11,6 +11,10 @@ const Login = () => {
 
   const {msg} = alert
 
+  const handleSubmit = async (e) =>{
+    e.preventDefault()
+  }
+
   return (
     <>
       <div>
@@ -22,7 +26,7 @@ const Login = () => {
 
       {msg && <Alert alert={{alert}}/>}
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="my-5">
             <label className="uppercase text-gray-7-- block text-xl font-bold">
               Email
@@ -31,6 +35,8 @@ const Login = () => {
               type="email"
               placeholder="Your Email"
               className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
+              value={email}
+              onChange={e=> setEmail(e.target.value)}
             />
           </div>
           <div className="my-5">
@@ -41,6 +47,8 @@ const Login = () => {
               type="password"
               placeholder="Your password"
               className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
+              value={password}
+              onChange={e=> setPassword(e.target.value)}
             />
           </div>
 
