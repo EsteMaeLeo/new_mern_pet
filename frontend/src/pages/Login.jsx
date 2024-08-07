@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Alert from "../components/Alert";
+import clientAxios from "../config/axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -19,6 +20,19 @@ const Login = () => {
         error: true,
       });
       return;
+    }
+    try {
+      const { data } = await clientAxios.post("veterinarian/login", {
+        email,
+        password,
+      });
+
+      console.log(data);
+    } catch (error) {
+      setAlert({
+        msg: error.response.data.msg,
+        error: true,
+      });
     }
   };
 
