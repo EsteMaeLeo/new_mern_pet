@@ -27,6 +27,8 @@ const Login = () => {
         password,
       });
 
+      localStorage.setItem('token', data.token);
+
       console.log(data);
     } catch (error) {
       setAlert({
