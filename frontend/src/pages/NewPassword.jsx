@@ -12,7 +12,7 @@ const NewPassword = () => {
   const params = useParam();
   const { token } = params;
 
-  console.log(params);
+  
 
   useEffect(() => {
     const checkToken = async () => {
