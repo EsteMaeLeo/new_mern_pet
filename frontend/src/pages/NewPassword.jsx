@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParam, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Alert from "../components/Alert";
 import clientAxios from "../config/axios";
 
@@ -9,10 +9,8 @@ const NewPassword = () => {
   const [alert, setAlert] = useState({});
   const [tokenValid, setTokenValid] = useState(false);
 
-  const params = useParam();
+  const params = useParams();
   const { token } = params;
-
-  
 
   useEffect(() => {
     const checkToken = async () => {
@@ -47,7 +45,8 @@ const NewPassword = () => {
     try {
       const url = `/veterinarian/forgot-password/${token}`;
       const { data } = await clientAxios.post(url, { password });
-   
+      console.log(data);
+
       setAlert({
         msg: data.msg,
       });
@@ -94,9 +93,11 @@ const NewPassword = () => {
               />
             </form>
 
-            {newPassword && <Link className="block text-center my-5 text-gray-600" to="/">
-              Sign In
-            </Link>}
+            {newPassword && (
+              <Link className="block text-center my-5 text-gray-600" to="/">
+                Sign In
+              </Link>
+            )}
           </>
         )}
       </div>

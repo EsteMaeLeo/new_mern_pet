@@ -10,7 +10,7 @@ import { AuthProvider } from "./context/AuthProvider";
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
+     
         <Routes>
           <Route path="/" element={<AuthLayout />}>
             <Route index element={<Login />} />
@@ -20,7 +20,7 @@ function App() {
             <Route path="confirm/:id" element={<ConfimUser />} />
           </Route>
         </Routes>
-      </AuthProvider>
+     
     </BrowserRouter>
   );
 }
