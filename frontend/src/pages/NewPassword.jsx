@@ -47,8 +47,7 @@ const NewPassword = () => {
     try {
       const url = `/veterinarian/forgot-password/${token}`;
       const { data } = await clientAxios.post(url, { password });
-      console.log(data);
-
+   
       setAlert({
         msg: data.msg,
       });
