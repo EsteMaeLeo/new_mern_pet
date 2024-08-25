@@ -50,6 +50,8 @@ const NewPassword = () => {
       setAlert({
         msg: data.msg,
       });
+
+      setNewPassword(true);
     } catch (error) {
       console.log(error);
       setAlert({
@@ -92,13 +94,13 @@ const NewPassword = () => {
                 className="bg-indigo-600 w-full py-3 px-10 rounded-2xl text-white uppercase font-bold mt-5 hover:cursor-pointer hover:bg-indigo-800 md:w-auto"
               />
             </form>
-
-            {newPassword && (
-              <Link className="block text-center my-5 text-gray-600" to="/">
-                Sign In
-              </Link>
-            )}
           </>
+        )}
+
+        {newPassword && (
+          <Link className="block text-center my-5 text-gray-600" to="/">
+            Sign In
+          </Link>
         )}
       </div>
     </>
