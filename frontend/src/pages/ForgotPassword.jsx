@@ -8,8 +8,8 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [alert, setAlert] = useState({});
 
-  const { auth } = useAuth();
-  console.log(auth);
+ // const { auth } = useAuth();
+  //console.log(auth);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
