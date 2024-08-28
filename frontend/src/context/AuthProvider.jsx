@@ -3,8 +3,8 @@ import { useState, useEffect, createContext } from "react";
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  //const {children} = props; 
- const [auth, setAuth] = useState({});
+  //const {children} = props;
+  const [auth, setAuth] = useState({});
 
   /*useEffect(() => {
     const authUser = async () => {
@@ -17,7 +17,12 @@ const AuthProvider = ({ children }) => {
   }, []);
 */
   return (
-    <AuthContext.Provider>
+    <AuthContext.Provider
+      value={{
+        auth,
+        setAuth,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

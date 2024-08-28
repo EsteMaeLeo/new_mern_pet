@@ -5,6 +5,10 @@ import Alert from "../components/Alert";
 import clientAxios from "../config/axios";
 
 const Login = () => {
+
+  const {auth} = useAuth();
+  console.log(auth)
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [alert, setAlert] = useState({});
