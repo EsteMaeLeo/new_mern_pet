@@ -5,15 +5,12 @@ import Alert from "../components/Alert";
 import clientAxios from "../config/axios";
 
 const Login = () => {
-
-  const {auth} = useAuth();
-  console.log(auth)
+  const { auth } = useAuth();
+  console.log(auth);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [alert, setAlert] = useState({});
-
-  const { msg } = alert;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +28,7 @@ const Login = () => {
         password,
       });
 
-      localStorage.setItem('token', data.token);
+      localStorage.setItem("token", data.token);
 
       console.log(data);
     } catch (error) {
@@ -41,6 +38,8 @@ const Login = () => {
       });
     }
   };
+
+  const { msg } = alert;
 
   return (
     <>
