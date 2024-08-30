@@ -1,4 +1,5 @@
 import { useState, useEffect, createContext } from "react";
+import clientAxios from "../config/axios";
 
 const AuthContext = createContext();
 
@@ -10,8 +11,15 @@ const AuthProvider = ({ children }) => {
     const authUser = async () => {
       const token = localStorage.getItem("token");
 
-      if (!token) return;
       console.log(token);
+      if (!token) return;
+
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      };
     };
     authUser();
   }, []);
