@@ -6,7 +6,7 @@ const AuthProvider = ({ children }) => {
   //const {children} = props;
   const [auth, setAuth] = useState({});
 
-  /*useEffect(() => {
+  useEffect(() => {
     const authUser = async () => {
       const token = localStorage.getItem("token");
 
@@ -15,7 +15,7 @@ const AuthProvider = ({ children }) => {
     };
     authUser();
   }, []);
-*/
+
   return (
     <AuthContext.Provider
       value={{
