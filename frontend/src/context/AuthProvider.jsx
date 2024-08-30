@@ -20,6 +20,13 @@ const AuthProvider = ({ children }) => {
           Authorization: `Bearer ${token}`,
         },
       };
+
+      try {
+        const { data } = await clientAxios("/veterinarian/profile");
+        console.log(data);
+      } catch (error) {
+        console.log(error``);
+      }
     };
     authUser();
   }, []);
