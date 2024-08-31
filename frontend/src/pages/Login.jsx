@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Alert from "../components/Alert";
 import clientAxios from "../config/axios";
@@ -12,6 +12,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [alert, setAlert] = useState({});
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +32,8 @@ const Login = () => {
       });
 
       localStorage.setItem("token", data.token);
+
+      navigate("/admin");
 
       console.log(data);
     } catch (error) {
@@ -50,8 +54,7 @@ const Login = () => {
         </h1>
       </div>
       <div className="mt-20 md:mt-5 shadow-xl px-5 py-10 rounded-xl bg-white">
-        
-      {msg && <Alert alert={alert} />}
+        {msg && <Alert alert={alert} />}
         <form onSubmit={handleSubmit}>
           <div className="my-5">
             <label className="uppercase text-gray-7-- block text-xl font-bold">
