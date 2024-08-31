@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
       };
 
       try {
-        const { data } = await clientAxios("/veterinarian/profile");
+        const { data } = await clientAxios("/veterinarian/profile", config);
         console.log(data);
       } catch (error) {
         console.log(error``);
