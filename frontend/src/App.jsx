@@ -1,9 +1,11 @@
 import AuthLayout from "./layout/AuthLayout";
+import ProtectedRoute from "./layout/ProtectedRoute";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import ConfimUser from "./pages/ConfimUser";
 import NewPassword from "./pages/NewPassword";
+import AdminPatient from "./pages/AdminPatient";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthProvider";
 
@@ -20,7 +22,8 @@ function App() {
             <Route path="confirm/:id" element={<ConfimUser />} />
           </Route>
 
-          <Route path="/admin">
+          <Route path="/admin" element={ProtectedRoute}>
+            <Route index element={AdminPatient}/>
           </Route>
         </Routes>
       </AuthProvider>
