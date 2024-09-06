@@ -5,15 +5,19 @@ const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   //const {children} = props;
-  const [auth, setAuth] = useState({}); 
+
+  const [load, setLoad] = useState(true);
+  const [auth, setAuth] = useState({});
 
   useEffect(() => {
     const authUser = async () => {
       const token = localStorage.getItem("token");
 
       console.log(token);
-      if (!token) return;
-
+      if (!token) {
+        setLoad(true);
+        return;
+      }
       const config = {
         headers: {
           "Content-Type": "application/json",
@@ -25,11 +29,13 @@ const AuthProvider = ({ children }) => {
         const { data } = await clientAxios("/veterinarian/profile", config);
         console.log(data);
         setAuth(data);
-        console.log("show")
+        console.log("show");
       } catch (error) {
         console.log(error);
         setAuth({});
       }
+
+      setLoad(false);
     };
     authUser();
   }, []);
@@ -39,6 +45,7 @@ const AuthProvider = ({ children }) => {
       value={{
         auth,
         setAuth,
+        load,
       }}
     >
       {children}
