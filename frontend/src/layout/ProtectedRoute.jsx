@@ -1,10 +1,13 @@
+import { Outlet } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const ProtectedRoute = () => {
+  const { useAuth } = useAuth();
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <Outlet />
+    </>
+  );
+};
 
-export default ProtectedRoute
+export default ProtectedRoute;
