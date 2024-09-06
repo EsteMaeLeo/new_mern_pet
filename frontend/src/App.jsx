@@ -22,8 +22,8 @@ function App() {
             <Route path="confirm/:id" element={<ConfimUser />} />
           </Route>
 
-          <Route path="/admin" element={ProtectedRoute}>
-            <Route index element={AdminPatient}/>
+          <Route path="/admin" element={<ProtectedRoute/>}>
+            <Route index element={<AdminPatient/>}/>
           </Route>
         </Routes>
       </AuthProvider>
