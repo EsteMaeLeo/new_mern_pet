@@ -15,6 +15,8 @@ function Header() {
           <Link to="/admin" className="text-white text-xl">
             Profile
           </Link>
+
+          <button type="button" className="text-white text-sm uppercase font-bold">Close Session</button>
         </nav>
       </div>
     </header>
