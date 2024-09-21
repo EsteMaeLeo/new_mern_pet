@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <header className="py-10 bg-indigo-600">
-      <div className="container mx-auto flex flex-col justify-between items-center">
-        <h1 className="font-bold text-2xl text-indigo-200">
+      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center">
+        <h1 className="font-bold text-2xl text-indigo-200 text-center">
           Vet Patient {""}
           <span className="text-white font-black">Management </span>
         </h1>
