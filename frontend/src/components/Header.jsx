@@ -8,7 +8,7 @@ function Header() {
           Vet Patient {""}
           <span className="text-white font-black">Management </span>
         </h1>
-        <nav className="flex lex-col lg:flex-row gap-4 mt-5">
+        <nav className="flex lex-col lg:flex-row gap-4 mt-5 lg:mt-0">
           <Link to="/admin" className="text-white text-xl">
             Patients
           </Link>
