@@ -12,7 +12,7 @@ const ProtectedRoute = () => {
   return (
     <>
       <Header />
-        {auth.profile?._id ? <Outlet /> : <Navigate to="/" />}
+        {auth.profile?._id ? (<main className="container mx-auto mt-20"></main> <Outlet />  ): <Navigate to="/" />}
       <Footer />
     </>
   );
