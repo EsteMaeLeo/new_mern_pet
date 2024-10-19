@@ -40,6 +40,8 @@ const AuthProvider = ({ children }) => {
     authUser();
   }, []);
 
+  const closeSession = () =>{}
+
   return (
     <AuthContext.Provider
       value={{
