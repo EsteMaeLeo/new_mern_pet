@@ -40,7 +40,10 @@ const AuthProvider = ({ children }) => {
     authUser();
   }, []);
 
-  const closeSession = () =>{}
+  const closeSession = () =>{
+    localStorage.removeItem('token');
+    setAuth({})
+  }
 
   return (
     <AuthContext.Provider
@@ -48,6 +51,7 @@ const AuthProvider = ({ children }) => {
         auth,
         setAuth,
         load,
+        closeSession
       }}
     >
       {children}
