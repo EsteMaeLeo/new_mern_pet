@@ -18,6 +18,7 @@ function Header() {
 
           <button type="button" className="text-white text-sm uppercase font-bold">Close Session</button>
         </nav>
+        <nav className="flex lex-col lg:flex-row gap-4 mt-5 lg:mt-0"></nav>
       </div>
     </header>
   );
