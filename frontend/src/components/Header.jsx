@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 function Header() {
+  const { closeSession } = useAuth();
   return (
     <header className="py-10 bg-indigo-600">
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center">
@@ -16,7 +18,12 @@ function Header() {
             Profile
           </Link>
 
-          <button type="button" className="text-white text-sm uppercase font-bold">Close Session</button>
+          <button
+            type="button"
+            className="text-white text-sm uppercase font-bold"
+          >
+            Close Session
+          </button>
         </nav>
         <nav className="flex lex-col lg:flex-row gap-4 mt-5 lg:mt-0"></nav>
       </div>
