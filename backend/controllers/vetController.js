@@ -85,7 +85,8 @@ const login = async (req, res) => {
 
   if (await user.checkPassword(password)) {
     console.log("password correct");
-    res.json({ token: generateJWT(user.id) });
+    user.token =  generateJWT(user.id)
+    res.json(user);
   } else {
     const error = new Error("WRONG Password.....");
     return res.status(403).json({ msg: error.message });
