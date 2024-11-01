@@ -21,6 +21,7 @@ function Header() {
           <button
             type="button"
             className="text-white text-sm uppercase font-bold"
+            onClick={closeSession}
           >
             Close Session
           </button>
