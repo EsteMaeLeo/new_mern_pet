@@ -113,7 +113,7 @@ const forgotPassword = async (req, res) => {
     });
 
     res.json({
-      msg: "Check the email for the instructions to reset the password",
+      msg: "Please check the email for with the instructions for reset the password",
     });
   } catch (error) {}
 };
