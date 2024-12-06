@@ -90,6 +90,7 @@ const login = async (req, res) => {
       _id: user.id,
       name: user.name,
       email: user.email,
+      token = generateJWT(user.id),
     });
   } else {
     const error = new Error("WRONG Password.....");
