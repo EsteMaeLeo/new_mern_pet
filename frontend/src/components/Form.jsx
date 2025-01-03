@@ -1,8 +1,11 @@
 const Form = () => {
   return (
-    <div>
-      Patient Form
-    </div>
+    <>
+      <p className="text-lg text-center mb-10">
+        Add the patients and {''}
+        <span className="text-indigo-600 font-bold">Management</span>
+      </p>
+    </>
   )
 }
 
