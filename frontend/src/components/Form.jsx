@@ -18,7 +18,7 @@ const Form = () => {
             placeholder="Pet Name"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
           />
-           <label htmlFor="owner" className="text-gray-700 uppercase font-bold">
+          <label htmlFor="owner" className="text-gray-700 uppercase font-bold">
             Pet Owner
           </label>
 
@@ -26,6 +26,28 @@ const Form = () => {
             id="owner"
             type="text"
             placeholder="Pet Owner"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+          />
+
+          <label htmlFor="owner" className="text-gray-700 uppercase font-bold">
+            Email Owner
+          </label>
+
+          <input
+            id="email"
+            type="email"
+            placeholder="Email Owner"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+          />
+
+          <label htmlFor="fecha" className="text-gray-700 uppercase font-bold">
+            Register Date
+          </label>
+
+          <input
+            id="fecha"
+            type="date"
+            placeholder="Email Owner"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
           />
         </div>
