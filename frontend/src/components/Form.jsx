@@ -50,6 +50,19 @@ const Form = () => {
             placeholder="Email Owner"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
           />
+
+          <label
+            htmlFor="symptoms"
+            className="text-gray-700 uppercase font-bold"
+          >
+            symptoms
+          </label>
+
+          <textarea
+            id="symptoms"
+            placeholder="Email Owner"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+          />
         </div>
       </form>
     </>
