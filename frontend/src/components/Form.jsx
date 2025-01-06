@@ -60,10 +60,15 @@ const Form = () => {
 
           <textarea
             id="symptoms"
-            placeholder="Email Owner"
+            placeholder="Describe symptoms"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
           />
         </div>
+        <input
+          type="submit"
+          className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-800 cursor-pointer transition-colors"
+          value="Add patient"
+        />
       </form>
     </>
   );
