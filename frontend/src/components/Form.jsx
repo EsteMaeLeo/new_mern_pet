@@ -6,7 +6,7 @@ const Form = () => {
         <span className="text-indigo-600 font-bold">Management</span>
       </p>
 
-      <form>
+      <form className="bg-white py-10 px-5 mb-10 lg:mb-0 shadow-md rounded-md">
         <div className="mb-5">
           <label htmlFor="pet" className="text-gray-700 uppercase font-bold">
             Pet Name
