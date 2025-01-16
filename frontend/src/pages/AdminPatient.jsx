@@ -14,7 +14,7 @@ const AdminPatient = () => {
           className="bg-indigo-600 text-white font-bold mx-10 p-3 rounded-md mb-10"
           onClick={() => setShowForm(!showForms)}
         >
-          Show form
+         {showForms? "Hide Form": "Show form"}
         </button>
 
         <div className={`${showForms ? "block" : "hidden"}md:w-1/2`}>
