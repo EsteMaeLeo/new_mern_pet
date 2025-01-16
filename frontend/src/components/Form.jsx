@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const Form = () => {
   const [name, setName] = useState("");
+  const [owner, setOwner] = useState("");
   const [email, setEmail] = useState("");
   const [registerDate, setRegisterDate] = useState(Date.now());
   const [symptoms, setSymptoms] = useState("");
@@ -37,6 +38,8 @@ const Form = () => {
             type="text"
             placeholder="Pet Owner"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            value={owner}
+            onChange={(e) => setOwner(e.target.value)}
           />
 
           <label htmlFor="owner" className="text-gray-700 uppercase font-bold">
@@ -48,6 +51,8 @@ const Form = () => {
             type="email"
             placeholder="Email Owner"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <label htmlFor="fecha" className="text-gray-700 uppercase font-bold">
@@ -57,8 +62,10 @@ const Form = () => {
           <input
             id="fecha"
             type="date"
-            placeholder="Email Owner"
+            placeholder="date"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            value={registerDate}
+            onChange={(e) => setRegisterDate(e.target.value)}
           />
 
           <label
@@ -72,6 +79,8 @@ const Form = () => {
             id="symptoms"
             placeholder="Describe symptoms"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            value={symptoms}
+            onChange={(e) => setRegisterDate(e.target.value)}
           />
         </div>
         <input
