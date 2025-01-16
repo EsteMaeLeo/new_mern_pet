@@ -9,17 +9,18 @@ const AdminPatient = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row">
+        <button
+          type="button"
+          className="bg-indigo-600 text-white font-bold mx-10 p-3 rounded-md mb-10"
+          onClick={() => setShowForm(!showForms)}
+        >
+          Show form
+        </button>
+
         <div className={`${showForms ? "block" : "hidden"}md:w-1/2`}>
-          <button
-            type="button"
-            className="bg-indigo-600 text-white font-bold mx-10 p-3 rounded-md"
-            onClick={() => setShowForm(true)}
-          >
-            Show form
-          </button>
           <Form />
         </div>
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 lg:w-3/5">
           <PatientList />
         </div>
       </div>
