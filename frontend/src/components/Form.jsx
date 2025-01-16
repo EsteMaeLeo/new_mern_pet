@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 const Form = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [registerDate, setRegisterDate] = useState(Date.now());
+  const [symptoms, setSymptoms] = useState("");
+  const [alert, setAlert] = useState("");
+
   return (
     <>
       <p className="text-lg text-center mb-10">
@@ -17,6 +25,8 @@ const Form = () => {
             type="text"
             placeholder="Pet Name"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
           <label htmlFor="owner" className="text-gray-700 uppercase font-bold">
             Pet Owner
