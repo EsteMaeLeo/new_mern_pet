@@ -20,12 +20,15 @@ const Form = () => {
     }
   };
 
+  const { msg } = alert;
   return (
     <>
       <p className="text-lg text-center mb-10">
         Add the patients and {""}
         <span className="text-indigo-600 font-bold">Management</span>
       </p>
+
+      {msg && <Alert alert={alert} />}
 
       <form
         className="bg-white py-10 px-5 mb-10 lg:mb-0 shadow-md rounded-md"
