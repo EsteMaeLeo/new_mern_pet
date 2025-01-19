@@ -28,10 +28,8 @@ const Form = () => {
         <span className="text-indigo-600 font-bold">Management</span>
       </p>
 
-      {msg && <Alert alert={alert} />}
-
       <form
-        className="bg-white py-10 px-5 mb-10 lg:mb-0 shadow-md rounded-md"
+        className="bg-white py-10 px-5 mb-10 lg:mb-5 shadow-md rounded-md"
         onSubmit={handleSubmit}
       >
         <div className="mb-5">
@@ -107,6 +105,7 @@ const Form = () => {
           value="Add patient"
         />
       </form>
+      {msg && <Alert alert={alert} />}
     </>
   );
 };
