@@ -8,6 +8,10 @@ const Form = () => {
   const [symptoms, setSymptoms] = useState("");
   const [alert, setAlert] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <p className="text-lg text-center mb-10">
@@ -15,7 +19,10 @@ const Form = () => {
         <span className="text-indigo-600 font-bold">Management</span>
       </p>
 
-      <form className="bg-white py-10 px-5 mb-10 lg:mb-0 shadow-md rounded-md">
+      <form
+        className="bg-white py-10 px-5 mb-10 lg:mb-0 shadow-md rounded-md"
+        onSubmit={handleSubmit}
+      >
         <div className="mb-5">
           <label htmlFor="pet" className="text-gray-700 uppercase font-bold">
             Pet Name
@@ -80,7 +87,7 @@ const Form = () => {
             placeholder="Describe symptoms"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
             value={symptoms}
-            onChange={(e) => setRegisterDate(e.target.value)}
+            onChange={(e) => setSymptoms(e.target.value)}
           />
         </div>
         <input
