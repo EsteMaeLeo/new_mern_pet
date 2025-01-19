@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Alert from "./Alert";
 const Form = () => {
   const [name, setName] = useState("");
   const [owner, setOwner] = useState("");
@@ -10,6 +10,14 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if ([name, owner, email, registerDate, symptoms].includes("")) {
+      setAlert({
+        msg: "All fields are mandatory",
+        error: true,
+      });
+      return;
+    }
   };
 
   return (
