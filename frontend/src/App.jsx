@@ -8,24 +8,27 @@ import NewPassword from "./pages/NewPassword";
 import AdminPatient from "./pages/AdminPatient";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthProvider";
+import { PatientProvider } from "./context/PatientProvider";
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Routes>
-          <Route path="/" element={<AuthLayout />}>
-            <Route index element={<Login />} />
-            <Route path="signup" element={<Signup />} />
-            <Route path="forgot-password" element={<ForgotPassword />} />
-            <Route path="forgot-password/:token" element={<NewPassword />} />
-            <Route path="confirm/:id" element={<ConfimUser />} />
-          </Route>
+        <PatientProvider>
+          <Routes>
+            <Route path="/" element={<AuthLayout />}>
+              <Route index element={<Login />} />
+              <Route path="signup" element={<Signup />} />
+              <Route path="forgot-password" element={<ForgotPassword />} />
+              <Route path="forgot-password/:token" element={<NewPassword />} />
+              <Route path="confirm/:id" element={<ConfimUser />} />
+            </Route>
 
-          <Route path="/admin" element={<ProtectedRoute/>}>
-            <Route index element={<AdminPatient/>}/>
-          </Route>
-        </Routes>
+            <Route path="/admin" element={<ProtectedRoute />}>
+              <Route index element={<AdminPatient />} />
+            </Route>
+          </Routes>
+        </PatientProvider>
       </AuthProvider>
     </BrowserRouter>
   );
