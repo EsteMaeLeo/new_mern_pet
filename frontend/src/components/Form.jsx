@@ -1,12 +1,19 @@
 import { useState } from "react";
 import Alert from "./Alert";
+import usePatient from "../hooks/usePatient";
+
 const Form = () => {
   const [name, setName] = useState("");
   const [owner, setOwner] = useState("");
   const [email, setEmail] = useState("");
   const [registerDate, setRegisterDate] = useState(Date.now());
   const [symptoms, setSymptoms] = useState("");
+
   const [alert, setAlert] = useState("");
+
+  const { patient } = usePatient();
+
+  console.log(patient);
 
   const handleSubmit = (e) => {
     e.preventDefault();
