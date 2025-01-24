@@ -6,7 +6,7 @@ const PatientContext = createContext();
 export const PatientProvider = ({ children }) => {
   const [patients, setPatients] = useState([]);
 
-  return const PatientContext: React.Context<any>
+  return 
   <PatientContext.Provider value={{ patients }}>
     {children}
   </PatientContext.Provider>;
