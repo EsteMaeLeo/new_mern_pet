@@ -7,7 +7,18 @@ export const PatientProvider = ({ children }) => {
   const [patients, setPatients] = useState([]);
 
   const savePatient = async (patient) => {
-    console.log(patient);
+    try {
+      const token = localStorage.getItem("token");
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const { data } = await clientAxios.post("/patients", patient, config);
+    } catch (error) {
+      console.log(error.response.data.msg);
+    }
   };
 
   return (
@@ -21,3 +32,5 @@ export const PatientProvider = ({ children }) => {
     </PatientContext.Provider>
   );
 };
+
+export default PatientContext;
