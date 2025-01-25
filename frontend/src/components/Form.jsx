@@ -6,14 +6,15 @@ const Form = () => {
   const [name, setName] = useState("");
   const [owner, setOwner] = useState("");
   const [email, setEmail] = useState("");
-  const [registerDate, setRegisterDate] = useState(Date.now());
+  //const [registerDate, setRegisterDate] = useState(Date.now());
+  const [registerDate, setRegisterDate] = useState();
   const [symptoms, setSymptoms] = useState("");
 
   const [alert, setAlert] = useState("");
 
-  const { patient } = usePatient();
+  const { savePatient } = usePatient();
 
-  console.log(patient);
+  console.log(savePatient);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +26,10 @@ const Form = () => {
       });
       return;
     }
+
+    setAlert({})
+    savePatient({name, owner, email, registerDate, symptoms})
+
   };
 
   const { msg } = alert;
