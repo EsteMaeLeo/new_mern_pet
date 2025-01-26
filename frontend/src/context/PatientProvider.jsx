@@ -16,6 +16,10 @@ export const PatientProvider = ({ children }) => {
         },
       };
       const { data } = await clientAxios.post("/patients", patient, config);
+
+      const {__V, ...patienSave} = data;
+      setPatients([patienSave, ...patients])
+      
     } catch (error) {
       console.log(error.response.data.msg);
     }
