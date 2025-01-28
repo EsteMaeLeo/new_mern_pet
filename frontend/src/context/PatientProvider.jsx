@@ -6,6 +6,13 @@ const PatientContext = createContext();
 export const PatientProvider = ({ children }) => {
   const [patients, setPatients] = useState([]);
 
+  useEffect(()=>{
+    const getPatient = async ()=>{}
+
+    getPatient()
+
+  },[])
+
   const savePatient = async (patient) => {
     try {
       const token = localStorage.getItem("token");
