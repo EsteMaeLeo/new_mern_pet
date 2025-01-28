@@ -7,7 +7,14 @@ export const PatientProvider = ({ children }) => {
   const [patients, setPatients] = useState([]);
 
   useEffect(()=>{
-    const getPatient = async ()=>{}
+    const getPatient = async ()=>{
+        try {
+            const token = localStorage.getItem('token')
+            if(!token)return
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     getPatient()
 
