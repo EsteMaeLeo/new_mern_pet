@@ -6,19 +6,26 @@ const PatientContext = createContext();
 export const PatientProvider = ({ children }) => {
   const [patients, setPatients] = useState([]);
 
-  useEffect(()=>{
-    const getPatient = async ()=>{
-        try {
-            const token = localStorage.getItem('token')
-            if(!token)return
-        } catch (error) {
-            console.log(error)
-        }
-    }
+  useEffect(() => {
+    const getPatient = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        if (!token) return;
+        const config = {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        };
+        const { data } = await clientAxios("/patient", config);
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-    getPatient()
-
-  },[])
+    getPatient();
+  }, []);
 
   const savePatient = async (patient) => {
     try {
@@ -31,9 +38,8 @@ export const PatientProvider = ({ children }) => {
       };
       const { data } = await clientAxios.post("/patients", patient, config);
 
-      const {__V, ...patienSave} = data;
-      setPatients([patienSave, ...patients])
-      
+      const { __V, ...patienSave } = data;
+      setPatients([patienSave, ...patients]);
     } catch (error) {
       console.log(error.response.data.msg);
     }
