@@ -1,8 +1,13 @@
+import usePatient from "../hooks/usePatient"
+
 const PatientList = () => {
+
+  const {patients} = usePatient()
+
   return (
-    <div>
-      
-    </div>
+    <>
+      {patients.length }
+    </>
   )
 }
 
