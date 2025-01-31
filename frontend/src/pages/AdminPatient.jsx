@@ -30,3 +30,4 @@ const AdminPatient = () => {
 };
 
 export default AdminPatient;
+
