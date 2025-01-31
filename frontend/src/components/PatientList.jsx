@@ -1,4 +1,5 @@
 import usePatient from "../hooks/usePatient";
+import Patient from "./Patient";
 
 const PatientList = () => {
   const { patients } = usePatient();
@@ -12,9 +13,12 @@ const PatientList = () => {
           <p className="text-xl mt-5 mb-10 text-center">
             Manage your{""}
             <span className="text-indigo-600 font-bold">
-             Patients and Appoitments
+              Patients and Appoitments
             </span>
           </p>
+          {patients.map((patient) => (
+            <Patient key={patient.id} patient={patient} />
+          ))}
         </>
       ) : (
         <>
