@@ -27,15 +27,14 @@ const Form = () => {
       return;
     }
 
-    setAlert({})
-    savePatient({name, owner, email, registerDate, symptoms})
-
+    setAlert({});
+    savePatient({ name, owner, email, registerDate, symptoms });
   };
 
   const { msg } = alert;
   return (
     <>
-      <p className="text-lg text-center mb-10">
+      <p className="text-xl mt-5 mb-10 text-center">
         Add the patients and {""}
         <span className="text-indigo-600 font-bold">Management</span>
       </p>
