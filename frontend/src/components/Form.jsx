@@ -34,6 +34,8 @@ const Form = () => {
   const { msg } = alert;
   return (
     <>
+    <h2 className="font-black text-3xl text-center">Patients Management</h2>
+
       <p className="text-xl mt-5 mb-10 text-center">
         Add the patients and {""}
         <span className="text-indigo-600 font-bold">Management</span>
