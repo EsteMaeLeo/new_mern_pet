@@ -45,11 +45,14 @@ export const PatientProvider = ({ children }) => {
     }
   };
 
+  const setEdition = (id) =>{ }
+
   return (
     <PatientContext.Provider
       value={{
         patients,
         savePatient,
+        setEdition
       }}
     >
       {children}
