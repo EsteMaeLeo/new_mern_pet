@@ -10,7 +10,7 @@ const Form = () => {
   //const [registerDate, setRegisterDate] = useState(Date.now());
   const [registerDate, setRegisterDate] = useState();
   const [symptoms, setSymptoms] = useState("");
-  const[id, setId] = useState(null)
+  const [id, setId] = useState(null);
 
   const [alert, setAlert] = useState("");
 
@@ -18,9 +18,11 @@ const Form = () => {
 
   console.log(savePatient);
 
-  useEffect(()=>{
-    setName()
-  },[Patient])
+  useEffect(() => {
+    if (Patient?.namesetName) {
+      setName(Patient.name);
+    }
+  }, [Patient]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,7 +42,7 @@ const Form = () => {
   const { msg } = alert;
   return (
     <>
-    <h2 className="font-black text-3xl text-center">Patients Management</h2>
+      <h2 className="font-black text-3xl text-center">Patients Management</h2>
 
       <p className="text-xl mt-5 mb-10 text-center">
         Add the patients and {""}
