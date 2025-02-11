@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Alert from "./Alert";
 import usePatient from "../hooks/usePatient";
+import Patient from "./patient";
 
 const Form = () => {
   const [name, setName] = useState("");
@@ -9,12 +10,17 @@ const Form = () => {
   //const [registerDate, setRegisterDate] = useState(Date.now());
   const [registerDate, setRegisterDate] = useState();
   const [symptoms, setSymptoms] = useState("");
+  const[id, setId] = useState(null)
 
   const [alert, setAlert] = useState("");
 
   const { savePatient } = usePatient();
 
   console.log(savePatient);
+
+  useEffect(()=>{
+    setName()
+  },[Patient])
 
   const handleSubmit = (e) => {
     e.preventDefault();
