@@ -14,19 +14,20 @@ const Form = () => {
 
   const [alert, setAlert] = useState("");
 
-  const { savePatient } = usePatient();
+  const { savePatient, patient } = usePatient();
 
   console.log(savePatient);
 
   useEffect(() => {
-    if (Patient?.namesetName) {
-      setName(Patient.name);
-      setOwner(Patient.owner);
-      setEmail(Patient.email);
-      setRegisterDate(Patient.registerDate);
-      setSymptoms(Patient.symptoms);
+    if (patient?.namesetName) {
+      setName(patient.name);
+      setOwner(patient.owner);
+      setEmail(patient.email);
+      setRegisterDate(patient.registerDate);
+      setSymptoms(patient.symptoms);
+      setId(patient._id);
     }
-  }, [Patient]);
+  }, [patient]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,7 +41,7 @@ const Form = () => {
     }
 
     setAlert({});
-    savePatient({ name, owner, email, registerDate, symptoms });
+    savePatient({ name, owner, email, registerDate, symptoms, id });
   };
 
   const { msg } = alert;
@@ -127,7 +128,7 @@ const Form = () => {
         <input
           type="submit"
           className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-800 cursor-pointer transition-colors"
-          value="Add patient"
+          value={id ? "Save Changes" : "Add Patient"}
         />
       </form>
       {msg && <Alert alert={alert} />}
