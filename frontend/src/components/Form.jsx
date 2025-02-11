@@ -21,6 +21,10 @@ const Form = () => {
   useEffect(() => {
     if (Patient?.namesetName) {
       setName(Patient.name);
+      setOwner(Patient.owner);
+      setEmail(Patient.email);
+      setRegisterDate(Patient.registerDate);
+      setSymptoms(Patient.symptoms);
     }
   }, [Patient]);
 
