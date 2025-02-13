@@ -40,8 +40,14 @@ const Form = () => {
       return;
     }
 
-    setAlert({});
     savePatient({ name, owner, email, registerDate, symptoms, id });
+    setAlert({ msg: "Save successfully" });
+    setName("");
+    setOwner("");
+    setEmail("");
+    setRegisterDate("");
+    setSymptoms("");
+    setId("");
   };
 
   const { msg } = alert;
