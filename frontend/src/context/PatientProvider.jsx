@@ -64,8 +64,12 @@ export const PatientProvider = ({ children }) => {
   };
 
   const setEdition = (patient) => {
-    setEdition(patient);
+    setPatient(patient);
   };
+
+  const deletePatient = id =>{
+    console.log(id)
+  }
 
   return (
     <PatientContext.Provider
@@ -73,6 +77,8 @@ export const PatientProvider = ({ children }) => {
         patients,
         savePatient,
         setEdition,
+        patient,
+        deletePatient
       }}
     >
       {children}
