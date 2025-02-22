@@ -67,7 +67,7 @@ export const PatientProvider = ({ children }) => {
     setPatient(patient);
   };
 
-  const deletePatient = id =>{
+  const deletePatient = async id =>{
     const confirmMsg = confirm('Confirm you want to delete?')
     if(confirmMsg){
       try {
@@ -79,7 +79,7 @@ export const PatientProvider = ({ children }) => {
             Authorization: `Bearer ${token}`,
           },
         };
-        const { data } = await clientAxios("/patient", config);
+        const { data } = await clientAxios.delete(`/patients/${id}`, config);
         console.log(data);
       } catch (error) {
         console.log(error);
