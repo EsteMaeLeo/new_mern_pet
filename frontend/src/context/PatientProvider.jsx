@@ -68,7 +68,23 @@ export const PatientProvider = ({ children }) => {
   };
 
   const deletePatient = id =>{
-    console.log(id)
+    const confirmMsg = confirm('Confirm you want to delete?')
+    if(confirmMsg){
+      try {
+        const token = localStorage.getItem("token");
+        if (!token) return;
+        const config = {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        };
+        const { data } = await clientAxios("/patient", config);
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    } 
   }
 
   return (
