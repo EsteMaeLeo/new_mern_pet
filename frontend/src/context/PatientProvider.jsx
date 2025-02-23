@@ -67,9 +67,9 @@ export const PatientProvider = ({ children }) => {
     setPatient(patient);
   };
 
-  const deletePatient = async id =>{
-    const confirmMsg = confirm('Confirm you want to delete?')
-    if(confirmMsg){
+  const deletePatient = async (id) => {
+    const confirmMsg = confirm("Confirm you want to delete?");
+    if (confirmMsg) {
       try {
         const token = localStorage.getItem("token");
         if (!token) return;
@@ -81,11 +81,15 @@ export const PatientProvider = ({ children }) => {
         };
         const { data } = await clientAxios.delete(`/patients/${id}`, config);
         console.log(data);
+        const patientUpdated = patients.filter(
+          (patientState) => patientState._id !== id
+        );
+        setPatients(patientUpdated);
       } catch (error) {
         console.log(error);
       }
-    } 
-  }
+    }
+  };
 
   return (
     <PatientContext.Provider
@@ -94,7 +98,7 @@ export const PatientProvider = ({ children }) => {
         savePatient,
         setEdition,
         patient,
-        deletePatient
+        deletePatient,
       }}
     >
       {children}
