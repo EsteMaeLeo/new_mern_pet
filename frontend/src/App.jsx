@@ -6,6 +6,8 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ConfimUser from "./pages/ConfimUser";
 import NewPassword from "./pages/NewPassword";
 import AdminPatient from "./pages/AdminPatient";
+import EditProfile from "./pages/EditProfile";
+import ChangePassword from "./pages/ChangePassword";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthProvider";
 import { PatientProvider } from "./context/PatientProvider";
@@ -26,6 +28,8 @@ function App() {
 
             <Route path="/admin" element={<ProtectedRoute />}>
               <Route index element={<AdminPatient />} />
+              <Route path="profile" element={<EditProfile />} />
+              <Route path="change-profile" element={<ChangePassword />} />
             </Route>
           </Routes>
         </PatientProvider>
