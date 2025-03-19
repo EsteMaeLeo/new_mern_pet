@@ -1,10 +1,10 @@
-
+import adminNav from "../components/adminNav";
 function EditProfile() {
   return (
-    <div>
-      
-    </div>
-  )
+    <>
+      <adminNav />
+    </>
+  );
 }
 
-export default EditProfile
+export default EditProfile;
