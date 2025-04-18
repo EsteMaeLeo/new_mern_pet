@@ -8,6 +8,12 @@ function EditProfile() {
         Modify your {""}{" "}
         <span className="text-indigo-600 font-bold">Information here</span>
       </p>
+
+      <div className="flex justify-center">
+        <div className="w-full md:w-1/2 bg-white shadow rounded-lg p-5">
+          <form action=""></form>
+        </div>
+      </div>
     </>
   );
 }
