@@ -22,6 +22,32 @@ function EditProfile() {
                 name="name"
               />
             </div>
+            <div className="my-3">
+              <label className="uppercase font-bold text-gray-600">
+                Web site
+              </label>
+              <input
+                type="text"
+                className="border bg-gray-50 w-full p-2 mt-5 rounded-lg"
+                name="web"
+              />
+            </div>
+            <div className="my-3">
+              <label className="uppercase font-bold text-gray-600">Phone</label>
+              <input
+                type="text"
+                className="border bg-gray-50 w-full p-2 mt-5 rounded-lg"
+                name="phone"
+              />
+            </div>
+            <div className="my-3">
+              <label className="uppercase font-bold text-gray-600">Email</label>
+              <input
+                type="text"
+                className="border bg-gray-50 w-full p-2 mt-5 rounded-lg"
+                name="name"
+              />
+            </div>
           </form>
         </div>
       </div>
